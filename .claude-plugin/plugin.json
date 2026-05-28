@@ -1,0 +1,10 @@
+{
+  "name": "ebc-storyboard",
+  "version": "1.0.0",
+  "description": "Generates self-contained HTML storyboards for talking-head videos from a script",
+  "author": {
+    "name": "EBC Learning",
+    "email": "abhinandanmalik@ebcpublishing.in"
+  },
+  "keywords": ["storyboard", "video", "teaching", "production", "script"]
+}
