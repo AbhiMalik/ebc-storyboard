@@ -105,12 +105,12 @@
       <div class="step">
         <div class="step-num">2</div>
         <div class="step-body">
-          <p class="step-label">Install the plugin in Claude Code</p>
-          <p class="step-desc">Open Claude Code and type <span class="inline-code">/plugin</span> in the prompt, then press Enter:</p>
-          <div class="code-block"><code><span class="cmd">/plugin</span></code></div>
-          <p class="step-desc" style="margin-top:.6rem">This opens the plugin manager. Then type the following and press Enter:</p>
-          <div class="code-block"><code>install <span class="path">~/plugins/ebc-storyboard</span></code></div>
-          <div class="callout">You only need to do this once. The skill will be available in every project from that point on.</div>
+          <p class="step-label">Add a shortcut to your shell (optional but recommended)</p>
+          <p class="step-desc">To avoid typing a long path each session, add this alias to your <span class="inline-code">~/.zshrc</span> file:</p>
+          <div class="code-block"><code><span class="comment"># Open Terminal and run:</span>
+<span class="cmd">echo</span> <span class="flag">'alias storyboard="claude --plugin-dir ~/plugins/ebc-storyboard"'</span> >> ~/.zshrc
+<span class="cmd">source</span> ~/.zshrc</code></div>
+          <div class="callout">After this, you can launch the storyboard session by typing <strong>storyboard</strong> in Terminal instead of the full command.</div>
         </div>
       </div>
 
@@ -125,8 +125,12 @@
       <div class="step">
         <div class="step-num">1</div>
         <div class="step-body">
-          <p class="step-label">Open any project in Claude Code</p>
-          <p class="step-desc">The skill works from any folder — it doesn't need to be a specific project.</p>
+          <p class="step-label">Launch Claude Code with the plugin loaded</p>
+          <p class="step-desc">Open Terminal, <span class="inline-code">cd</span> into any folder you want the storyboard saved in, then run:</p>
+          <div class="code-block"><code><span class="cmd">claude</span> <span class="flag">--plugin-dir</span> <span class="path">~/plugins/ebc-storyboard</span></code></div>
+          <p class="step-desc" style="margin-top:.5rem">Or if you added the shell alias in the setup step:</p>
+          <div class="code-block"><code><span class="cmd">storyboard</span></code></div>
+          <div class="callout-info callout">The <span class="inline-code" style="color:inherit">--plugin-dir</span> flag must be passed each time you launch Claude Code for the skill to be available. It is not a one-time install.</div>
         </div>
       </div>
 
@@ -134,12 +138,12 @@
         <div class="step-num">2</div>
         <div class="step-body">
           <p class="step-label">Invoke the skill with your script</p>
-          <p class="step-desc">Type <span class="inline-code">/storyboard</span>, then paste your video script:</p>
-          <div class="code-block"><code><span class="cmd">/storyboard</span>
+          <p class="step-desc">Type <span class="inline-code">/ebc-storyboard:storyboard</span>, then paste your video script:</p>
+          <div class="code-block"><code><span class="cmd">/ebc-storyboard:storyboard</span>
 
 <span class="comment">[Paste your full video script here]</span></code></div>
           <p class="step-desc" style="margin-top:.5rem">To specify a filename, add it on the first line:</p>
-          <div class="code-block"><code><span class="cmd">/storyboard</span> Save as <span class="path">module-3-mens-rea.html</span>
+          <div class="code-block"><code><span class="cmd">/ebc-storyboard:storyboard</span> Save as <span class="path">module-3-mens-rea.html</span>
 
 <span class="comment">[Your script]</span></code></div>
         </div>
@@ -183,7 +187,7 @@
     <p class="section-title">Getting updates</p>
     <p class="step-desc" style="margin-bottom:.5rem">When the skill is updated, pull the latest version from Terminal:</p>
     <div class="code-block"><code><span class="cmd">cd</span> <span class="path">~/plugins/ebc-storyboard</span> && <span class="cmd">git pull</span></code></div>
-    <div class="callout" style="margin-top:.75rem">No reinstall needed — Claude Code reads the skill files from disk each time you use it.</div>
+    <div class="callout" style="margin-top:.75rem">No extra steps needed — Claude Code reads the skill files from disk each time you launch it with <strong>--plugin-dir</strong>.</div>
   </div>
 
   <div class="footer">
