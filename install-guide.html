@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Storyboard Skill — Setup Guide</title>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{background:#f8fafc;color:#1e293b;font-family:ui-sans-serif,system-ui,-apple-system,sans-serif;padding:3rem 1.5rem;min-height:100vh}
+    .page{max-width:680px;margin:0 auto}
+
+    /* Header */
+    .header{margin-bottom:3rem}
+    .header-eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#94a3b8;margin-bottom:.6rem}
+    .header h1{font-size:1.75rem;font-weight:800;color:#0f172a;letter-spacing:-.02em;line-height:1.2}
+    .header p{font-size:.95rem;color:#64748b;margin-top:.75rem;line-height:1.7}
+
+    /* Sections */
+    .section{margin-bottom:2.5rem}
+    .section-title{font-size:.65rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#94a3b8;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
+    .section-title::after{content:'';flex:1;height:1px;background:#e2e8f0}
+
+    /* Steps */
+    .steps{display:flex;flex-direction:column;gap:1rem}
+    .step{display:grid;grid-template-columns:2rem 1fr;gap:.75rem;align-items:start}
+    .step-num{width:2rem;height:2rem;border-radius:50%;background:#0f172a;color:#f8fafc;font-size:.72rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.1rem}
+    .step-body{}
+    .step-label{font-size:.88rem;font-weight:600;color:#1e293b;margin-bottom:.35rem}
+    .step-desc{font-size:.82rem;color:#64748b;line-height:1.6;margin-bottom:.5rem}
+
+    /* Code blocks */
+    .code-block{background:#0f172a;border-radius:6px;padding:.75rem 1rem;overflow-x:auto;position:relative}
+    .code-block code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.78rem;color:#e2e8f0;white-space:pre;display:block;line-height:1.6}
+    .code-block .comment{color:#475569}
+    .code-block .cmd{color:#7dd3fc}
+    .code-block .flag{color:#86efac}
+    .code-block .path{color:#fcd34d}
+    .inline-code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.8rem;background:#f1f5f9;color:#0f172a;padding:.1rem .38rem;border-radius:3px;border:1px solid #e2e8f0}
+
+    /* Requirement chips */
+    .req-list{display:flex;flex-wrap:wrap;gap:.5rem}
+    .req{display:flex;align-items:center;gap:.4rem;background:#fff;border:1px solid #e2e8f0;border-radius:20px;padding:.3rem .75rem;font-size:.8rem;color:#334155}
+    .req-dot{width:6px;height:6px;border-radius:50%;background:#10b981;flex-shrink:0}
+    .req-dot.optional{background:#f59e0b}
+
+    /* Callout */
+    .callout{background:#f0fdf4;border:1px solid #bbf7d0;border-left:3px solid #10b981;border-radius:6px;padding:.75rem 1rem;font-size:.82rem;color:#166534;line-height:1.6;margin-top:.75rem}
+    .callout strong{color:#14532d}
+    .callout-info{background:#eff6ff;border:1px solid #bfdbfe;border-left:3px solid #3b82f6;color:#1e40af}
+    .callout-info strong{color:#1e3a8a}
+
+    /* Slide types grid */
+    .type-grid{display:grid;grid-template-columns:1fr 1fr;gap:.4rem}
+    .type-item{display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:#475569;padding:.3rem 0}
+    .type-dot{width:5px;height:5px;border-radius:50%;background:#3b82f6;flex-shrink:0}
+    .type-dot.green{background:#10b981}
+    .type-dot.purple{background:#8b5cf6}
+    .type-dot.amber{background:#f59e0b}
+
+    /* Footer */
+    .footer{margin-top:3.5rem;padding-top:1.5rem;border-top:1px solid #e2e8f0;display:flex;justify-content:space-between;align-items:center;flex-wrap:gap}
+    .footer-brand{font-size:.78rem;color:#94a3b8}
+    .footer-brand strong{color:#64748b}
+    .footer-link{font-size:.75rem;color:#94a3b8;text-decoration:none}
+    .footer-link:hover{color:#3b82f6}
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <p class="header-eyebrow">EBC Learning · Claude Code Plugin</p>
+    <h1>Storyboard Skill — Setup Guide</h1>
+    <p>Turn a video script into a production-ready HTML storyboard in seconds. This guide gets you set up in under two minutes.</p>
+  </div>
+
+  <!-- Requirements -->
+  <div class="section">
+    <p class="section-title">Requirements</p>
+    <div class="req-list">
+      <div class="req"><div class="req-dot"></div> Claude Code (desktop or CLI)</div>
+      <div class="req"><div class="req-dot"></div> Git — pre-installed on macOS</div>
+      <div class="req"><div class="req-dot optional"></div> No GitHub account needed</div>
+    </div>
+    <div class="callout-info callout" style="margin-top:.75rem">
+      <strong>Don't have Claude Code?</strong> Download it at <strong>claude.ai/code</strong> — available as a Mac desktop app, Windows app, or CLI.
+    </div>
+  </div>
+
+  <!-- Installation -->
+  <div class="section">
+    <p class="section-title">One-time installation</p>
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <p class="step-label">Clone the skill to your machine</p>
+          <p class="step-desc">Open Terminal and run:</p>
+          <div class="code-block"><code><span class="cmd">git clone</span> https://github.com/AbhiMalik/ebc-storyboard <span class="path">~/plugins/ebc-storyboard</span></code></div>
+          <div class="callout">This downloads the skill files to a <strong>plugins</strong> folder in your home directory. You only need to do this once.</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <p class="step-label">Install the plugin in Claude Code</p>
+          <p class="step-desc">Open Claude Code, then type this in the prompt and press Enter:</p>
+          <div class="code-block"><code>/plugin install <span class="path">~/plugins/ebc-storyboard</span></code></div>
+          <div class="callout">You only need to do this once. The skill will be available in every project from that point on.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Using the skill -->
+  <div class="section">
+    <p class="section-title">Using the skill</p>
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <p class="step-label">Open any project in Claude Code</p>
+          <p class="step-desc">The skill works from any folder — it doesn't need to be a specific project.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <p class="step-label">Invoke the skill with your script</p>
+          <p class="step-desc">Type <span class="inline-code">/storyboard</span>, then paste your video script:</p>
+          <div class="code-block"><code><span class="cmd">/storyboard</span>
+
+<span class="comment">[Paste your full video script here]</span></code></div>
+          <p class="step-desc" style="margin-top:.5rem">To specify a filename, add it on the first line:</p>
+          <div class="code-block"><code><span class="cmd">/storyboard</span> Save as <span class="path">module-3-mens-rea.html</span>
+
+<span class="comment">[Your script]</span></code></div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <p class="step-label">Open the output file in your browser</p>
+          <p class="step-desc">Claude saves a self-contained <span class="inline-code">.html</span> file in your current folder. Double-click it to open — no internet connection or server needed.</p>
+          <div class="callout">Each slide shows the audio script on the left with inline <strong>▶ cue markers</strong> marking exactly when each animation element should appear, and the visual (instructor shot or animatic) on the right.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Slide types -->
+  <div class="section">
+    <p class="section-title">Slide types available</p>
+    <div class="type-grid">
+      <div class="type-item"><div class="type-dot green"></div> Wide Shot</div>
+      <div class="type-item"><div class="type-dot green"></div> Medium Shot</div>
+      <div class="type-item"><div class="type-dot green"></div> Close-up Shot</div>
+      <div class="type-item"><div class="type-dot green"></div> Medium/Wide + Lower Third</div>
+      <div class="type-item"><div class="type-dot"></div> Title Card</div>
+      <div class="type-item"><div class="type-dot"></div> Bullet Reveal</div>
+      <div class="type-item"><div class="type-dot"></div> Featured Quote</div>
+      <div class="type-item"><div class="type-dot"></div> Split Screen</div>
+      <div class="type-item"><div class="type-dot"></div> Flowchart — Linear</div>
+      <div class="type-item"><div class="type-dot"></div> Flowchart — Decision</div>
+      <div class="type-item"><div class="type-dot amber"></div> Legal Extract — Statute</div>
+      <div class="type-item"><div class="type-dot amber"></div> Legal Extract — Judgment</div>
+      <div class="type-item"><div class="type-dot purple"></div> Key Takeaways</div>
+      <div class="type-item"><div class="type-dot purple"></div> Video Summary</div>
+    </div>
+  </div>
+
+  <!-- Staying up to date -->
+  <div class="section">
+    <p class="section-title">Getting updates</p>
+    <p class="step-desc" style="margin-bottom:.5rem">When the skill is updated, pull the latest version from Terminal:</p>
+    <div class="code-block"><code><span class="cmd">cd</span> <span class="path">~/plugins/ebc-storyboard</span> && <span class="cmd">git pull</span></code></div>
+    <div class="callout" style="margin-top:.75rem">No reinstall needed — Claude Code reads the skill files from disk each time you use it.</div>
+  </div>
+
+  <div class="footer">
+    <p class="footer-brand"><strong>EBC Learning</strong> · Internal tool · Not for redistribution</p>
+    <a class="footer-link" href="https://github.com/AbhiMalik/ebc-storyboard">github.com/AbhiMalik/ebc-storyboard</a>
+  </div>
+
+</div>
+</body>
+</html>
