@@ -185,9 +185,26 @@
   <!-- Staying up to date -->
   <div class="section">
     <p class="section-title">Getting updates</p>
-    <p class="step-desc" style="margin-bottom:.5rem">When the skill is updated, pull the latest version from Terminal:</p>
-    <div class="code-block"><code><span class="cmd">cd</span> <span class="path">~/plugins/ebc-storyboard</span> && <span class="cmd">git pull</span></code></div>
-    <div class="callout" style="margin-top:.75rem">No extra steps needed — Claude Code reads the skill files from disk each time you launch it with <strong>--plugin-dir</strong>.</div>
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <p class="step-label">Open Terminal and go to the plugin folder</p>
+          <div class="code-block"><code><span class="cmd">cd</span> <span class="path">~/plugins/ebc-storyboard</span></code></div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <p class="step-label">Pull the latest files from GitHub</p>
+          <div class="code-block"><code><span class="cmd">git pull</span></code></div>
+          <div class="callout">That's it. No reinstall or restart needed — the next time you launch the skill, Claude Code will automatically use the updated files from disk.</div>
+        </div>
+      </div>
+
+    </div>
   </div>
 
   <div class="footer">
