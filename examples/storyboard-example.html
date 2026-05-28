@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Understanding Mens Rea — Storyboard</title>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{background:#0d0d14;color:#e2e8f0;font-family:ui-sans-serif,system-ui,-apple-system,sans-serif;padding:2rem 1.5rem;min-height:100vh}
+    .sb-header{text-align:center;margin-bottom:2.5rem}
+    .sb-title{font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#f8fafc;letter-spacing:-.02em}
+    .sb-meta{color:#64748b;font-size:.8rem;margin-top:.4rem;letter-spacing:.05em;text-transform:uppercase}
+    .slide{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr auto;border:1px solid #1e293b;border-radius:10px;margin-bottom:2rem;overflow:hidden;max-width:1100px;margin-inline:auto}
+    .slide-header{grid-column:1/-1;background:#151b2d;padding:.6rem 1.2rem;display:flex;align-items:center;gap:.8rem;border-bottom:1px solid #1e293b}
+    .slide-num{font-size:.68rem;font-weight:800;color:#475569;letter-spacing:.12em;text-transform:uppercase;min-width:4.5rem}
+    .slide-title-text{font-size:.85rem;font-weight:600;color:#cbd5e1}
+    .slide-duration{margin-left:auto;font-size:.72rem;color:#475569;font-variant-numeric:tabular-nums}
+    .slide-vtype{font-size:.65rem;color:#3b4f70;background:#1a2540;border-radius:4px;padding:2px 8px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+    .col-audio{padding:1.25rem 1.5rem;background:#080d18;border-right:1px solid #1a2540}
+    .col-visual{background:#0a1020;display:flex;flex-direction:column;padding:1.25rem 1.5rem;gap:.75rem}
+    .col-label{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#334155;margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem}
+    .col-label::before{content:'';display:block;width:3px;height:10px;background:currentColor;border-radius:2px}
+    .audio-text{font-size:.88rem;line-height:1.8;color:#94a3b8}
+    .audio-text strong{color:#cbd5e1;font-weight:600}
+    .audio-text em{font-style:italic;color:#b0bec5}
+    .frame-wrap{position:relative;width:100%;aspect-ratio:16/9;border:1px solid #1e293b;border-radius:6px;overflow:hidden;background:#040812}
+    .frame-wrap::before{content:'';position:absolute;inset:0;background:
+      linear-gradient(135deg,#1e293b 5px,transparent 5px) 0 0/14px 14px no-repeat,
+      linear-gradient(225deg,#1e293b 5px,transparent 5px) 100% 0/14px 14px no-repeat,
+      linear-gradient(315deg,#1e293b 5px,transparent 5px) 0 100%/14px 14px no-repeat,
+      linear-gradient(45deg,#1e293b 5px,transparent 5px) 100% 100%/14px 14px no-repeat;
+      z-index:5;pointer-events:none}
+    .frame-wrap > svg{width:100%;height:100%;display:block}
+    .shot-badge{position:absolute;bottom:8px;left:8px;background:rgba(0,0,0,.75);color:#94a3b8;font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 7px;border-radius:3px;z-index:10}
+    .dir-note{font-size:.72rem;color:#334155;line-height:1.5}
+    .dir-note strong{color:#475569}
+    .slide-footer{grid-column:1/-1;background:#060b12;border-top:1px solid #1a2540;padding:.5rem 1.2rem;display:flex;gap:2rem;flex-wrap:wrap}
+    .footer-item{font-size:.7rem;color:#334155}
+    .footer-item span{color:#475569;font-weight:600}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    @keyframes scaleIn{from{opacity:0;transform:scaleX(0)}to{opacity:1;transform:scaleX(1)}}
+    @keyframes boxPop{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
+    @keyframes slideInLT{from{transform:translateX(-105%)}to{transform:translateX(0)}}
+    .anim-cue{display:inline-flex;align-items:center;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.22);color:#60a5fa;font-size:.57rem;font-weight:700;padding:.08rem .38rem .08rem .26rem;border-radius:3px;letter-spacing:.02em;vertical-align:middle;white-space:nowrap;margin:0 3px;font-style:normal;line-height:1.5;user-select:none}
+    .anim-cue::before{content:'▶';font-size:.44rem;margin-right:.22rem;opacity:.6}
+    .sb-cue-legend{color:#334155;font-size:.7rem;margin-top:.55rem;text-align:center}
+  </style>
+</head>
+<body>
+
+<header class="sb-header">
+  <h1 class="sb-title">Understanding Mens Rea in Indian Criminal Law</h1>
+  <p class="sb-meta">14 slides · Est. 9:00 · May 2026 · All slide types demonstrated</p>
+  <p class="sb-cue-legend">Inline <span class="anim-cue" style="pointer-events:none">cue label</span> badges mark the exact narration point at which the named graphic element should appear on screen.</p>
+</header>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 01 · Wide Shot / Opening
+═══════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="slide-num">Slide 01</span>
+    <span class="slide-title-text">Opening Hook</span>
+    <span class="slide-vtype">Wide Shot</span>
+    <span class="slide-duration">~0:30</span>
+  </div>
+  <div class="col-audio">
+    <div class="col-label">Audio Script</div>
+    <p class="audio-text">Can a person be guilty of a crime if they had no idea they were doing anything wrong? That question sits at the heart of one of the oldest principles in criminal law — <strong>mens rea</strong>, or the "guilty mind." In this lesson, we'll unpack what it means, how Indian courts interpret it, and why it matters in virtually every criminal trial.</p>
+  </div>
+  <div class="col-visual">
+    <div class="col-label">Visual</div>
+    <div class="frame-wrap">
+      <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
+        <defs><linearGradient id="ws-bg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#22273e"/><stop offset="100%" stop-color="#14182a"/></linearGradient></defs>
+        <rect width="400" height="225" fill="#0d1020"/>
+        <rect x="0" y="0" width="400" height="172" fill="url(#ws-bg1)"/>
+        <rect x="18" y="18" width="88" height="110" rx="3" fill="#1e2338" opacity="0.9"/>
+        <rect x="24" y="28" width="8" height="72" rx="1" fill="#4a5580"/><rect x="35" y="33" width="6" height="67" rx="1" fill="#354070"/><rect x="44" y="25" width="9" height="75" rx="1" fill="#5a6090"/><rect x="56" y="30" width="7" height="70" rx="1" fill="#3a4568"/><rect x="66" y="24" width="10" height="76" rx="1" fill="#4a5580"/><rect x="79" y="36" width="8" height="64" rx="1" fill="#3a4570"/>
+        <rect x="298" y="28" width="44" height="86" rx="3" fill="#19202e" opacity="0.9"/>
+        <ellipse cx="320" cy="58" rx="20" ry="24" fill="#1a3820"/><ellipse cx="308" cy="70" rx="13" ry="17" fill="#1f4025"/><ellipse cx="332" cy="64" rx="13" ry="19" fill="#163218"/><rect x="314" y="80" width="12" height="22" rx="2" fill="#2d4a1e"/>
+        <rect x="0" y="168" width="400" height="57" fill="#0e1520"/><rect x="0" y="165" width="400" height="7" fill="#1a2535"/>
+        <rect x="28" y="144" width="92" height="52" rx="3" fill="#151e30"/><rect x="33" y="147" width="82" height="43" rx="2" fill="#0a1825"/><rect x="35" y="149" width="78" height="39" rx="1" fill="#1a3a6a" opacity="0.55"/><rect x="22" y="192" width="104" height="6" rx="2" fill="#111a28"/>
+        <rect x="246" y="174" width="20" height="22" rx="4" fill="#3a4060"/><path d="M266,179 Q275,179 275,185 Q275,191 266,191" stroke="#3a4060" stroke-width="3" fill="none"/>
+        <rect x="282" y="163" width="72" height="48" rx="2" fill="#e8e0d0" transform="rotate(-4,318,187)"/><rect x="280" y="161" width="72" height="48" rx="2" fill="#f0ead8" transform="rotate(-6,316,185)"/>
+        <rect x="166" y="196" width="22" height="29" rx="3" fill="#1a2840"/><rect x="212" y="196" width="22" height="29" rx="3" fill="#1a2840"/>
+        <rect x="158" y="108" width="84" height="88" rx="10" fill="#2d4f8a"/>
+        <path d="M158,108 Q174,124 200,116 Q226,124 242,108 L238,195 Q200,200 162,195Z" fill="#1a3060"/>
+        <path d="M200,116 L213,148 L200,154 L187,148Z" fill="white" opacity="0.88"/>
+        <rect x="189" y="91" width="22" height="22" rx="5" fill="#d4906a"/>
+        <ellipse cx="200" cy="72" rx="30" ry="34" fill="#d4906a"/>
+        <path d="M170,62 Q172,24 200,20 Q228,24 230,62 Q222,38 200,34 Q178,38 170,62Z" fill="#2c1810"/>
+        <ellipse cx="170" cy="73" rx="5" ry="8" fill="#c47a56"/><ellipse cx="230" cy="73" rx="5" ry="8" fill="#c47a56"/>
+        <ellipse cx="189" cy="68" rx="6" ry="5.5" fill="white"/><ellipse cx="211" cy="68" rx="6" ry="5.5" fill="white"/>
+        <circle cx="190" cy="69" r="3.8" fill="#2c3e50"/><circle cx="212" cy="69" r="3.8" fill="#2c3e50"/>
+        <circle cx="191" cy="70" r="2.2" fill="#111"/><circle cx="213" cy="70" r="2.2" fill="#111"/>
+        <circle cx="192" cy="67" r="1.1" fill="white" opacity="0.8"/><circle cx="214" cy="67" r="1.1" fill="white" opacity="0.8"/>
+        <path d="M183,59 Q190,54 197,58" stroke="#2c1810" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+        <path d="M203,58 Q210,54 217,59" stroke="#2c1810" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+        <path d="M197,76 Q200,83 203,76" stroke="#b06040" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <path d="M192,87 Q200,93 208,87" stroke="#8b3a2a" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <rect x="152" y="162" width="96" height="18" rx="7" fill="#2d4f8a"/>
+        <ellipse cx="155" cy="171" rx="11" ry="9" fill="#d4906a"/><ellipse cx="245" cy="171" rx="11" ry="9" fill="#d4906a"/>
+      </svg>
+      <span class="shot-badge">Wide Shot</span>
+    </div>
+    <p class="dir-note"><strong>Camera:</strong> Eye level, locked off &nbsp;·&nbsp; <strong>Light:</strong> Key left, soft fill right &nbsp;·&nbsp; <strong>Energy:</strong> Curious, slightly rhetorical — pause after "anything wrong?"</p>
+  </div>
+  <div class="slide-footer">
+    <span class="footer-item"><span>Duration:</span> ~30s</span>
+    <span class="footer-item"><span>Transition:</span> Cut</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 02 · Title Card
+═══════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="slide-num">Slide 02</span>
+    <span class="slide-title-text">Section Title: What is Mens Rea?</span>
+    <span class="slide-vtype">Animatic: Title Card</span>
+    <span class="slide-duration">~0:10</span>
+  </div>
+  <div class="col-audio">
+    <div class="col-label">Audio Script</div>
+    <p class="audio-text">Let's start at the beginning. <span class="anim-cue">CUT: Title Card</span> <strong>What is mens rea?</strong></p>
+  </div>
+  <div class="col-visual">
+    <div class="col-label">Visual</div>
+    <div class="frame-wrap">
+      <div style="width:100%;height:100%;background:linear-gradient(135deg,#0f1729 0%,#1e1b4b 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.8rem;padding:1rem">
+        <div style="width:44px;height:3px;background:#8b5cf6;border-radius:2px;opacity:0;animation:scaleIn .4s ease .15s forwards"></div>
+        <h2 style="font-size:1.35rem;font-weight:800;color:#f8fafc;text-align:center;letter-spacing:-.02em;line-height:1.2;opacity:0;animation:fadeIn .5s ease .4s forwards">What is Mens Rea?</h2>
+        <p style="font-size:.7rem;color:#64748b;text-transform:uppercase;letter-spacing:.12em;opacity:0;animation:fadeIn .5s ease .75s forwards">Criminal Law Fundamentals · Part 1</p>
+        <div style="width:44px;height:3px;background:#8b5cf6;border-radius:2px;opacity:0;animation:scaleIn .4s ease 1s forwards"></div>
+      </div>
+    </div>
+    <p class="dir-note"><strong>Animation:</strong> Bar scales in, title fades, subtitle fades, bar scales in &nbsp;·&nbsp; <strong>Timing:</strong> Plays as instructor finishes question</p>
+  </div>
+  <div class="slide-footer">
+    <span class="footer-item"><span>Duration:</span> ~10s</span>
+    <span class="footer-item"><span>Transition:</span> Cut</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 03 · Featured Quote (Latin maxim)
+═══════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="slide-num">Slide 03</span>
+    <span class="slide-title-text">The Latin Maxim</span>
+    <span class="slide-vtype">Animatic: Featured Quote</span>
+    <span class="slide-duration">~0:25</span>
+  </div>
+  <div class="col-audio">
+    <div class="col-label">Audio Script</div>
+    <p class="audio-text">The concept is rooted in a Latin maxim that has guided criminal law for centuries: <span class="anim-cue">" mark + Latin quote</span> <em>"Actus non facit reum nisi mens sit rea"</em> — <span class="anim-cue">Translation</span> an act does not make a person guilty unless the mind is also guilty. In other words, doing something harmful is not enough. You also need a <strong>culpable state of mind</strong>. <span class="anim-cue">Attribution</span></p>
+  </div>
+  <div class="col-visual">
+    <div class="col-label">Visual</div>
+    <div class="frame-wrap">
+      <div style="width:100%;height:100%;background:linear-gradient(135deg,#0c1424,#0a0a18);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.2rem 2rem;position:relative;overflow:hidden">
+        <div style="position:absolute;top:2px;left:14px;font-size:5.5rem;color:#1a2a4a;line-height:1;font-family:Georgia,serif;opacity:0;animation:fadeIn .3s ease .1s forwards;user-select:none">"</div>
+        <p style="font-size:.82rem;font-weight:600;color:#e2e8f0;text-align:center;line-height:1.65;position:relative;z-index:1;opacity:0;animation:fadeIn .6s ease .4s forwards;font-style:italic;max-width:88%">"Actus non facit reum nisi mens sit rea"</p>
+        <p style="font-size:.76rem;color:#94a3b8;text-align:center;line-height:1.5;position:relative;z-index:1;opacity:0;animation:fadeIn .5s ease .9s forwards;max-width:85%;margin-top:.5rem">An act does not make a person guilty unless the mind is also guilty.</p>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:.3rem;margin-top:.8rem;opacity:0;animation:fadeIn .4s ease 1.3s forwards">
+          <div style="width:32px;height:1.5px;background:#8b5cf6;border-radius:1px"></div>
+          <p style="font-size:.65rem;color:#64748b;text-transform:uppercase;letter-spacing:.12em;margin-top:.2rem">Latin Maxim · English Common Law</p>
+        </div>
+      </div>
+    </div>
+    <p class="dir-note"><strong>Animation:</strong> Decorative mark → Latin text → translation → attribution &nbsp;·&nbsp; <strong>Hold:</strong> Keep visible while instructor speaks translation</p>
+  </div>
+  <div class="slide-footer">
+    <span class="footer-item"><span>Duration:</span> ~25s</span>
+    <span class="footer-item"><span>Transition:</span> Cut</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 04 · Medium Shot + Lower Third
+═══════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="slide-num">Slide 04</span>
+    <span class="slide-title-text">Mens Rea in the IPC</span>
+    <span class="slide-vtype">Medium Shot + Lower Third</span>
+    <span class="slide-duration">~0:35</span>
+  </div>
+  <div class="col-audio">
+    <div class="col-label">Audio Script</div>
+    <p class="audio-text">In India, mens rea is not defined in one place. Instead, the Indian Penal Code <span class="anim-cue">Lower Third: IPC ref.</span> expresses it through words like <strong>"intentionally"</strong>, <strong>"knowingly"</strong>, <strong>"voluntarily"</strong>, and <strong>"negligently"</strong> — each carrying a different level of culpability. The Supreme Court has held that mens rea is a necessary ingredient of every offence under the IPC, unless the statute expressly or by necessary implication excludes it.</p>
+  </div>
+  <div class="col-visual">
+    <div class="col-label">Visual</div>
+    <div class="frame-wrap">
+      <!-- Medium shot SVG -->
+      <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
+        <defs><radialGradient id="ms-bg4" cx="50%" cy="30%" r="70%"><stop offset="0%" stop-color="#252a4a"/><stop offset="100%" stop-color="#0d1020"/></radialGradient></defs>
+        <rect width="400" height="225" fill="url(#ms-bg4)"/>
+        <rect x="0" y="200" width="400" height="25" fill="#0e1520"/><rect x="0" y="197" width="400" height="6" fill="#1a2535"/>
+        <rect x="55" y="194" width="105" height="5" rx="1" fill="#1a2840"/>
+        <rect x="112" y="108" width="176" height="120" rx="16" fill="#2d4f8a"/>
+        <path d="M112,108 Q148,130 200,120 Q252,130 288,108 L282,225 Q200,232 118,225Z" fill="#1a3060"/>
+        <path d="M200,120 L218,163 L200,170 L182,163Z" fill="white" opacity="0.9"/>
+        <path d="M178,120 Q190,106 200,110 Q210,106 222,120 L218,128 L200,123 L182,128Z" fill="white" opacity="0.8"/>
+        <rect x="183" y="78" width="34" height="36" rx="6" fill="#d4906a"/>
+        <ellipse cx="200" cy="52" rx="52" ry="58" fill="#d4906a"/>
+        <path d="M148,44 Q151,0 200,0 Q249,0 252,44 Q243,16 200,12 Q157,16 148,44Z" fill="#2c1810"/>
+        <path d="M148,44 Q144,62 148,82 Q154,52 162,46Z" fill="#2c1810"/>
+        <path d="M252,44 Q256,62 252,82 Q246,52 238,46Z" fill="#2c1810"/>
+        <ellipse cx="148" cy="55" rx="8" ry="12" fill="#c47a56"/><ellipse cx="252" cy="55" rx="8" ry="12" fill="#c47a56"/>
+        <ellipse cx="181" cy="48" rx="10" ry="8.5" fill="white"/><ellipse cx="219" cy="48" rx="10" ry="8.5" fill="white"/>
+        <circle cx="183" cy="49" r="6" fill="#2c3e50"/><circle cx="221" cy="49" r="6" fill="#2c3e50"/>
+        <circle cx="184" cy="50" r="3.5" fill="#111"/><circle cx="222" cy="50" r="3.5" fill="#111"/>
+        <circle cx="186" cy="47" r="1.5" fill="white" opacity="0.85"/><circle cx="224" cy="47" r="1.5" fill="white" opacity="0.85"/>
+        <path d="M169,35 Q181,27 193,33" stroke="#2c1810" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M207,33 Q219,27 231,35" stroke="#2c1810" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M194,64 Q200,75 206,64" stroke="#b06040" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M186,82 Q200,92 214,82" stroke="#8b3a2a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M112,158 Q90,172 98,202 Q115,202 132,178 L132,148Z" fill="#2d4f8a"/>
+        <path d="M288,158 Q310,172 302,202 Q285,202 268,178 L268,148Z" fill="#2d4f8a"/>
+        <ellipse cx="100" cy="200" rx="18" ry="12" fill="#d4906a"/><ellipse cx="300" cy="200" rx="18" ry="12" fill="#d4906a"/>
+      </svg>
+      <!-- Lower-third overlay -->
+      <div style="position:absolute;bottom:0;left:0;width:68%;background:rgba(10,16,28,0.93);border-top:2px solid #8b5cf6;padding:.38rem .75rem;transform:translateX(-105%);animation:slideInLT .5s cubic-bezier(.22,.61,.36,1) .7s forwards;z-index:20;backdrop-filter:blur(3px)">
+        <div style="font-size:.56rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8b5cf6;margin-bottom:.15rem">Statutory Reference</div>
+        <div style="font-size:.72rem;color:#e2e8f0;font-weight:500">Indian Penal Code, 1860</div>
+        <div style="font-size:.6rem;color:#64748b;margin-top:.08rem">Act No. 45 of 1860 · Sections 299–304 (Culpable Homicide &amp; Murder)</div>
+      </div>
+      <span class="shot-badge" style="bottom:auto;top:8px;right:8px">Medium Shot</span>
+    </div>
+    <p class="dir-note"><strong>Camera:</strong> Eye level, locked off &nbsp;·&nbsp; <strong>Lower-third:</strong> Slides in at ~0:20 as instructor names the IPC &nbsp;·&nbsp; <strong>Energy:</strong> Measured, pedagogical</p>
+  </div>
+  <div class="slide-footer">
+    <span class="footer-item"><span>Duration:</span> ~35s</span>
+    <span class="footer-item"><span>Lower-third in:</span> ~0:20</span>
+    <span class="footer-item"><span>Transition:</span> Cut</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 05 · Legal Extract — Statute (IPC)
+═══════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="slide-num">Slide 05</span>
+    <span class="slide-title-text">IPC Section 300 — Murder</span>
+    <span class="slide-vtype">Animatic: Legal Extract — Statute</span>
+    <span class="slide-duration">~0:40</span>
+  </div>
+  <div class="col-audio">
+    <div class="col-label">Audio Script</div>
+    <p class="audio-text">Let's look at Section 300 of the IPC — <span class="anim-cue">S.300 document</span> the definition of murder. Read carefully and notice how many times intent and knowledge appear. The act alone does not make it murder. The section requires a very specific state of mind — an intention to cause death, or an intention to cause the kind of injury that the offender <em>knows</em> will likely be fatal.</p>
+  </div>
+  <div class="col-visual">
+    <div class="col-label">Visual</div>
+    <div class="frame-wrap">
+      <div style="width:100%;height:100%;background:#060d1a;display:flex;align-items:center;justify-content:center;padding:.75rem">
+        <div style="background:#0a1020;border:1px solid #1e3a5f;border-radius:6px;padding:.85rem 1.1rem;width:100%;height:100%;display:flex;flex-direction:column;gap:.45rem;opacity:0;animation:fadeIn .5s ease .25s forwards;overflow:hidden">
+          <div style="font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#475569">The Indian Penal Code, 1860 · Act No. 45 of 1860</div>
+          <div style="font-size:.76rem;font-weight:700;color:#93c5fd;border-bottom:1px solid #1e3a5f;padding-bottom:.4rem">Section 300 — Murder</div>
+          <div style="font-size:.73rem;color:#94a3b8;line-height:1.7;flex:1;overflow:hidden">
+            Except in the cases hereinafter excepted, culpable homicide is murder, if the act by which the death is caused is done—
+            <br><br>
+            <strong style="color:#b0c4de">Firstly</strong> — With the <span style="border-bottom:1.5px solid #f59e0b;color:#fcd34d;padding:0 1px">intention of causing death</span>; or
+            <br>
+            <strong style="color:#b0c4de">Secondly</strong> — With the intention of causing such bodily injury as the offender <span style="border-bottom:1.5px solid #f59e0b;color:#fcd34d;padding:0 1px">knows to be likely to cause the death</span> of the person.
+          </div>
+          <div style="font-size:.62rem;color:#334155;border-top:1px solid #1e2a3a;padding-top:.35rem;font-style:italic">See also: Exception 1 (grave and sudden provocation) · Exception 4 (sudden fight)</div>
+        </div>
+      </div>
+    </div>
+    <p class="dir-note"><strong>Animation:</strong> Document fades in as unit &nbsp;·&nbsp; <strong>Timing:</strong> Hold for ~20s; instructor reads with frame visible</p>
+  </div>
+  <div class="slide-footer">
+    <span class="footer-item"><span>Duration:</span> ~40s</span>
+    <span class="footer-item"><span>Transition:</span> Cut</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 06 · Bullet Reveal — Degrees of Mens Rea
+═══════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="slide-num">Slide 06</span>
+    <span class="slide-title-text">Four Degrees of Mens Rea</span>
+    <span class="slide-vtype">Animatic: Bullet Reveal</span>
+    <span class="slide-duration">~0:50</span>
+  </div>
+  <div class="col-audio">
+    <div class="col-label">Audio Script</div>
+    <p class="audio-text"><span class="anim-cue">Heading: Degrees</span> The IPC recognises four degrees of mental culpability, in descending order of blameworthiness. At the top is <strong>intention</strong> <span class="anim-cue">① Intention</span> — you wanted the outcome. Then <strong>knowledge</strong> <span class="anim-cue">② Knowledge</span> — you knew it would happen. Then <strong>recklessness</strong> <span class="anim-cue">③ Recklessness</span> — you took a conscious risk. And at the bottom, <strong>negligence</strong> <span class="anim-cue">④ Negligence</span> — you should have known, but didn't take care. Each attracts a different level of punishment.</p>
+  </div>
+  <div class="col-visual">
+    <div class="col-label">Visual</div>
+    <div class="frame-wrap">
+      <div style="width:100%;height:100%;background:#060d1a;display:flex;flex-direction:column;justify-content:center;padding:1.2rem 1.5rem;gap:.62rem">
+        <div style="font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#334155;margin-bottom:.2rem;opacity:0;animation:fadeIn .3s ease .1s forwards">Degrees of Culpability (descending)</div>
+        <div style="display:flex;align-items:flex-start;gap:.7rem;opacity:0;animation:fadeUp .4s ease .25s forwards">
+          <div style="width:7px;height:7px;border-radius:50%;background:#ef4444;flex-shrink:0;margin-top:.22rem"></div>
+          <span style="font-size:.82rem;color:#e2e8f0;line-height:1.45"><strong style="color:#fca5a5">Intention</strong> — desired the outcome; highest culpability</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:.7rem;opacity:0;animation:fadeUp .4s ease .65s forwards">
+          <div style="width:7px;height:7px;border-radius:50%;background:#f59e0b;flex-shrink:0;margin-top:.22rem"></div>
+          <span style="font-size:.82rem;color:#e2e8f0;line-height:1.45"><strong style="color:#fcd34d">Knowledge</strong> — knew the consequence would occur</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:.7rem;opacity:0;animation:fadeUp .4s ease 1.05s forwards">
+          <div style="width:7px;height:7px;border-radius:50%;background:#3b82f6;flex-shrink:0;margin-top:.22rem"></div>
+          <span style="font-size:.82rem;color:#e2e8f0;line-height:1.45"><strong style="color:#93c5fd">Recklessness</strong> — conscious disregard of a known risk</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:.7rem;opacity:0;animation:fadeUp .4s ease 1.45s forwards">
+          <div style="width:7px;height:7px;border-radius:50%;background:#10b981;flex-shrink:0;margin-top:.22rem"></div>
+          <span style="font-size:.82rem;color:#e2e8f0;line-height:1.45"><strong style="color:#6ee7b7">Negligence</strong> — fell below standard of care; lowest culpability</span>
+        </div>
+      </div>
+    </div>
+    <p class="dir-note"><strong>Animation:</strong> Each bullet on its verbal cue, ~0.4s stagger &nbsp;·&nbsp; <strong>Colour:</strong> Red→Amber→Blue→Green mirrors severity gradient</p>
+  </div>
+  <div class="slide-footer">
+    <span class="footer-item"><span>Duration:</span> ~50s</span>
+    <span class="footer-item"><span>Transition:</span> Cut</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 07 · Flowchart — Linear (Elements of a Crime)
+═══════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="slide-num">Slide 07</span>
+    <span class="slide-title-text">Elements of a Criminal Offence</span>
+    <span class="slide-vtype">Animatic: Flowchart — Linear</span>
+    <span class="slide-duration">~0:30</span>
+  </div>
+  <div class="col-audio">
+    <div class="col-label">Audio Script</div>
+    <p class="audio-text"><span class="anim-cue">Charge</span> For a court to convict someone, the prosecution must prove three things in sequence: first, that a <strong>guilty act</strong> <span class="anim-cue">Actus Reus</span> occurred — the actus reus. Second, that it was accompanied by a <strong>guilty mind</strong> <span class="anim-cue">Mens Rea</span> — the mens rea. And third, that these two elements <strong>coincided in time</strong> <span class="anim-cue">Conviction</span>. All three must be established. Miss any one, and there is no conviction <span class="anim-cue">Coincidence note</span>.</p>
+  </div>
+  <div class="col-visual">
+    <div class="col-label">Visual</div>
+    <div class="frame-wrap">
+      <div style="width:100%;height:100%;background:#060d1a;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:.6rem 1rem;gap:.55rem">
+        <div style="font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#334155;opacity:0;animation:fadeIn .3s ease .1s forwards">Elements Required for Conviction</div>
+        <svg viewBox="0 0 370 58" style="width:100%;overflow:visible" xmlns="http://www.w3.org/2000/svg">
+          <g style="opacity:0;animation:fadeIn .4s ease .25s forwards">
+            <rect x="0" y="14" width="56" height="28" rx="14" fill="none" stroke="#10b981" stroke-width="1.5"/>
+            <text x="28" y="32" text-anchor="middle" font-family="ui-sans-serif,sans-serif" font-size="10" fill="#10b981">Charge</text>
+          </g>
+          <g style="opacity:0;animation:fadeIn .3s ease .6s forwards">
+            <line x1="56" y1="28" x2="72" y2="28" stroke="#475569" stroke-width="1.5"/>
+            <polygon points="70,23 78,28 70,33" fill="#475569"/>
+          </g>
+          <g style="opacity:0;animation:fadeIn .4s ease .85s forwards">
+            <rect x="78" y="11" width="84" height="34" rx="4" fill="none" stroke="#3b82f6" stroke-width="1.5"/>
+            <text x="120" y="27" text-anchor="middle" font-family="ui-sans-serif,sans-serif" font-size="9.5" fill="#93c5fd">Actus Reus</text>
+            <text x="120" y="39" text-anchor="middle" font-family="ui-sans-serif,sans-serif" font-size="8" fill="#5a8abf">(guilty act)</text>
+          </g>
+          <g style="opacity:0;animation:fadeIn .3s ease 1.25s forwards">
+            <line x1="162" y1="28" x2="178" y2="28" stroke="#475569" stroke-width="1.5"/>
+            <polygon points="176,23 184,28 176,33" fill="#475569"/>
+          </g>
+          <g style="opacity:0;animation:fadeIn .4s ease 1.5s forwards">
+            <rect x="184" y="11" width="84" height="34" rx="4" fill="none" stroke="#8b5cf6" stroke-width="1.5"/>
+            <text x="226" y="27" text-anchor="middle" font-family="ui-sans-serif,sans-serif" font-size="9.5" fill="#c4b5fd">Mens Rea</text>
+            <text x="226" y="39" text-anchor="middle" font-family="ui-sans-serif,sans-serif" font-size="8" fill="#7c6aaf">(guilty mind)</text>
+          </g>
+          <g style="opacity:0;animation:fadeIn .3s ease 1.9s forwards">
+            <line x1="268" y1="28" x2="284" y2="28" stroke="#475569" stroke-width="1.5"/>
+            <polygon points="282,23 290,28 282,33" fill="#475569"/>
+          </g>
+          <g style="opacity:0;animation:fadeIn .4s ease 2.15s forwards">
+            <rect x="290" y="14" width="80" height="28" rx="14" fill="none" stroke="#10b981" stroke-width="1.5"/>
+            <text x="330" y="32" text-anchor="middle" font-family="ui-sans-serif,sans-serif" font-size="10" fill="#10b981">Conviction</text>
+          </g>
+        </svg>
+        <div style="font-size:.68rem;color:#334155;text-align:center;opacity:0;animation:fadeIn .4s ease 2.5s forwards">Coincidence in time is also required — actus reus + mens rea must occur simultaneously.</div>
+      </div>
+    </div>
+    <p class="dir-note"><strong>Animation:</strong> Charge → Actus Reus → Mens Rea → Conviction, each on verbal cue &nbsp;·&nbsp; <strong>Note:</strong> Add coincidence label as instructor reaches third point</p>
+  </div>
+  <div class="slide-footer">
+    <span class="footer-item"><span>Duration:</span> ~30s</span>
+    <span class="footer-item"><span>Transition:</span> Cut</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 08 · Flowchart — Decision (With/Without Mens Rea)
+═══════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="slide-num">Slide 08</span>
+    <span class="slide-title-text">With or Without Mens Rea?</span>
+    <span class="slide-vtype">Animatic: Flowchart — Decision</span>
+    <span class="slide-duration">~0:35</span>
+  </div>
+  <div class="col-audio">
+    <div class="col-label">Audio Script</div>
+    <p class="audio-text">Here's how a court works through the question. <span class="anim-cue">Act Committed</span> The accused has committed an act. <span class="anim-cue">Identify mental state</span> The court asks: was there a guilty mind at the time? <span class="anim-cue">Diamond: Mens Rea?</span> If yes — <span class="anim-cue">Yes: full liability</span> full criminal liability applies. If no — <span class="anim-cue">No: lesser offence</span> the court then considers whether a lesser offence, such as causing death by negligence under Section 304A, applies instead. This is why mens rea is not just a technicality. It determines which offence, if any, has been committed.</p>
+  </div>
+  <div class="col-visual">
+    <div class="col-label">Visual</div>
+    <div class="frame-wrap">
+      <div style="width:100%;height:100%;background:#060d1a;display:flex;align-items:center;justify-content:center;padding:.4rem .6rem">
+        <svg viewBox="0 0 400 215" style="width:100%;height:100%" xmlns="http://www.w3.org/2000/svg">
+          <g style="opacity:0;animation:fadeIn .4s ease .2s forwards">
+            <rect x="148" y="5" width="104" height="24" rx="12" fill="none" stroke="#10b981" stroke-width="1.5"/>
+            <text x="200" y="21" text-anchor="middle" font-family="ui-sans-serif,sans-serif" font-size="10" fill="#10b981">Act Committed</text>
+          </g>
+          <g style="opacity:0;animation:fadeIn .3s ease .55s forwards">
+            <line x1="200" y1="29" x2="200" y2="45" stroke="#475569" stroke-width="1.5"/>
+            <polygon points="195,43 205,43 200,50" fill="#475569"/>
+          </g>
+          <g style="opacity:0;animation:fadeIn .4s ease .8s forwards">
+            <rect x="128" y="50" width="144" height="28" rx="4" fill="none" stroke="#3b82f6" stroke-width="1.5"/>
+            <text x="200" y="68" text-anchor="middle" font-family="ui-sans-serif,sans-serif" font-size="10" fill="#93c5fd">Identify mental state</text>
+          </g>
+          <g style="opacity:0;animation:fadeIn .3s ease 1.2s forwards">
+            <line x1="200" y1="78" x2="200" y2="94" stroke="#475569" stroke-width="1.5"/>
+            <polygon points="195,92 205,92 200,99" fill="#475569"/>
+          </g>
+          <g style="opacity:0;animation:fadeIn .4s ease 1.45s forwards">
+            <polygon points="200,99 262,127 200,155 138,127" fill="none" stroke="#f59e0b" stroke-width="1.5"/>
+            <text x="200" y="124" text-anchor="middle" font-family="ui-sans-serif,sans-serif" font-size="9.5" fill="#fcd34d">Mens Rea</text>
+            <text x="200" y="137" text-anchor="middle" font-family="ui-sans-serif,sans-serif" font-size="8.5" fill="#92763a">present?</text>
+          </g>
+          <g style="opacity:0;animation:fadeIn .3s ease 1.9s forwards">
+            <line x1="200" y1="155" x2="200" y2="170" stroke="#475569" stroke-width="1.5"/>
+            <polygon points="195,168 205,168 200,175" fill="#475569"/>
+            <text x="213" y="165" font-family="ui-sans-serif,sans-serif" font-size="9" fill="#10b981">Yes</text>
+          </g>
+          <g style="opacity:0;animation:fadeIn .4s ease 2.2s forwards">
+            <rect x="128" y="175" width="144" height="32" rx="4" fill="none" stroke="#10b981" stroke-width="1.5"/>
+            <text x="200" y="192" text-anchor="middle" font-family="ui-sans-serif,sans-serif" font-size="10" fill="#6ee7b7">Full criminal liability</text>
+            <text x="200" y="203" text-anchor="middle" font-family="ui-sans-serif,sans-serif" font-size="8" fill="#3a7a5a">(e.g. S.300 Murder)</text>
+          </g>
+          <g style="opacity:0;animation:fadeIn .3s ease 1.9s forwards">
+            <line x1="262" y1="127" x2="282" y2="127" stroke="#475569" stroke-width="1.5"/>
+            <polygon points="280,122 288,127 280,132" fill="#475569"/>
+            <text x="263" y="122" font-family="ui-sans-serif,sans-serif" font-size="9" fill="#ef4444">No</text>
+          </g>
+          <g style="opacity:0;animation:fadeIn .4s ease 2.2s forwards">
+            <rect x="288" y="107" width="106" height="40" rx="4" fill="none" stroke="#ef4444" stroke-width="1.5"/>
+            <text x="341" y="124" text-anchor="middle" font-family="ui-sans-serif,sans-serif" font-size="9.5" fill="#fca5a5">Lesser offence /</text>
+            <text x="341" y="137" text-anchor="middle" font-family="ui-sans-serif,sans-serif" font-size="9.5" fill="#fca5a5">no offence</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <p class="dir-note"><strong>Animation:</strong> Build sequentially; decision diamond at ~1.45s, both branches together at ~1.9s &nbsp;·&nbsp; <strong>Timing:</strong> "If yes" cue → Yes branch; "If no" cue → No branch</p>
+  </div>
+  <div class="slide-footer">
+    <span class="footer-item"><span>Duration:</span> ~35s</span>
+    <span class="footer-item"><span>Transition:</span> Cut</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 09 · Legal Extract — Judgment (SC)
+═══════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="slide-num">Slide 09</span>
+    <span class="slide-title-text">SC on Mens Rea — Nathulal v. State of MP</span>
+    <span class="slide-vtype">Animatic: Legal Extract — Judgment</span>
+    <span class="slide-duration">~0:45</span>
+  </div>
+  <div class="col-audio">
+    <div class="col-label">Audio Script</div>
+    <p class="audio-text">The Supreme Court addressed this directly in <em>Nathulal v. State of Madhya Pradesh</em> in 1966. <span class="anim-cue">Judgment extract</span> The Court held that mens rea is an essential ingredient of a statutory offence, and that the presumption is always in favour of including the mental element unless the language of the statute clearly excludes it. Read the key paragraph now — the Court's language is precise and worth understanding carefully.</p>
+  </div>
+  <div class="col-visual">
+    <div class="col-label">Visual</div>
+    <div class="frame-wrap">
+      <div style="width:100%;height:100%;background:#060d1a;display:flex;align-items:center;justify-content:center;padding:.75rem">
+        <div style="background:#080e18;border:1px solid #1e293b;border-radius:6px;padding:.8rem 1rem;width:100%;height:100%;display:flex;flex-direction:column;gap:.4rem;opacity:0;animation:fadeIn .5s ease .25s forwards;overflow:hidden">
+          <div style="text-align:center;border-bottom:1px solid #1e293b;padding-bottom:.4rem">
+            <div style="font-size:.6rem;font-weight:700;color:#64748b;letter-spacing:.1em;text-transform:uppercase">Supreme Court of India</div>
+            <div style="font-size:.74rem;font-weight:600;color:#cbd5e1;margin-top:.15rem">Nathulal v. State of Madhya Pradesh</div>
+            <div style="font-size:.6rem;color:#475569;margin-top:.1rem">AIR 1966 SC 43 &nbsp;·&nbsp; [1966] 1 SCR 1</div>
+          </div>
+          <div style="font-size:.72rem;color:#94a3b8;line-height:1.72;flex:1;overflow:hidden">
+            <span style="font-size:.64rem;font-weight:700;color:#475569;margin-right:.4rem">¶ 7.</span>
+            It is a sound rule of construction adopted in England and in India that
+            <span style="background:#1c1400;border-bottom:1.5px solid #f59e0b;color:#fcd34d;padding:0 2px">a mens rea is an essential ingredient of a statutory offence, and that it should not be excluded except by express words or by necessary implication</span>.
+            The burden is on the prosecution to prove not only the act but also the guilty mind of the accused, unless the statute, in its true construction, has excluded the mental element.
+          </div>
+          <div style="font-size:.6rem;color:#334155;border-top:1px solid #1e293b;padding-top:.3rem;display:flex;justify-content:space-between">
+            <span>Per Subba Rao J. (as he then was)</span>
+            <span>3-judge bench · 1966</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="dir-note"><strong>Animation:</strong> Document fades in as unit &nbsp;·&nbsp; <strong>Hold:</strong> Keep visible for full 25–30s while instructor reads with students &nbsp;·&nbsp; <strong>Note:</strong> Instructor may point to highlighted passage verbally</p>
+  </div>
+  <div class="slide-footer">
+    <span class="footer-item"><span>Duration:</span> ~45s</span>
+    <span class="footer-item"><span>Transition:</span> Cut</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 10 · Split Screen — Intention vs. Knowledge
+═══════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="slide-num">Slide 10</span>
+    <span class="slide-title-text">Intention vs. Knowledge — The Distinction</span>
+    <span class="slide-vtype">Animatic: Split Screen</span>
+    <span class="slide-duration">~0:35</span>
+  </div>
+  <div class="col-audio">
+    <div class="col-label">Audio Script</div>
+    <p class="audio-text">Students often confuse intention with knowledge, so let's be clear. <span class="anim-cue">Intention panel</span> <strong>Intention</strong> means you desired the consequence — it was your purpose. <span class="anim-cue">Knowledge panel</span> <strong>Knowledge</strong> means you were substantially certain the consequence would follow, even if you didn't want it. The distinction matters because under Section 300, both can lead to a murder charge — but the mental state involved is different, and that affects how arguments are framed in court.</p>
+  </div>
+  <div class="col-visual">
+    <div class="col-label">Visual</div>
+    <div class="frame-wrap">
+      <div style="width:100%;height:100%;background:#060d1a;display:grid;grid-template-columns:1fr 1px 1fr">
+        <div style="display:flex;flex-direction:column;justify-content:center;padding:.9rem;gap:.5rem;opacity:0;animation:fadeIn .5s ease .2s forwards">
+          <div style="font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#ef4444;margin-bottom:.25rem">Intention</div>
+          <div style="font-size:.78rem;color:#e2e8f0;line-height:1.5;font-weight:500">"I wanted this to happen."</div>
+          <div style="font-size:.72rem;color:#94a3b8;line-height:1.45;margin-top:.3rem">The consequence was the accused's <em>purpose</em> or <em>aim</em>. Most culpable.</div>
+          <div style="font-size:.68rem;color:#7f1d1d;margin-top:.4rem;font-style:italic">e.g. Firing a gun directly at the victim's head</div>
+        </div>
+        <div style="background:#1e293b"></div>
+        <div style="display:flex;flex-direction:column;justify-content:center;padding:.9rem;gap:.5rem;opacity:0;animation:fadeIn .5s ease .7s forwards">
+          <div style="font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#f59e0b;margin-bottom:.25rem">Knowledge</div>
+          <div style="font-size:.78rem;color:#e2e8f0;line-height:1.5;font-weight:500">"I knew this would happen."</div>
+          <div style="font-size:.72rem;color:#94a3b8;line-height:1.45;margin-top:.3rem">The consequence was <em>substantially certain</em> to follow, even without desiring it.</div>
+          <div style="font-size:.68rem;color:#78350f;margin-top:.4rem;font-style:italic">e.g. Giving poison knowing it is lethal</div>
+        </div>
+      </div>
+    </div>
+    <p class="dir-note"><strong>Animation:</strong> Intention panel first (~0.2s), knowledge panel on "Knowledge" verbal cue (~0.7s) &nbsp;·&nbsp; <strong>Hold:</strong> Both panels visible for ~20s</p>
+  </div>
+  <div class="slide-footer">
+    <span class="footer-item"><span>Duration:</span> ~35s</span>
+    <span class="footer-item"><span>Transition:</span> Cut</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 11 · Close-up Shot — Key Principle
+═══════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="slide-num">Slide 11</span>
+    <span class="slide-title-text">The Core Principle</span>
+    <span class="slide-vtype">Close-up Shot</span>
+    <span class="slide-duration">~0:20</span>
+  </div>
+  <div class="col-audio">
+    <div class="col-label">Audio Script</div>
+    <p class="audio-text">Here's the principle I want you to carry with you: <strong>criminal liability is not just about what you did — it is about what you meant when you did it.</strong> The act and the mind must come together. That is the foundation of fair criminal justice.</p>
+  </div>
+  <div class="col-visual">
+    <div class="col-label">Visual</div>
+    <div class="frame-wrap">
+      <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
+        <defs><radialGradient id="cu-bg11" cx="50%" cy="35%" r="65%"><stop offset="0%" stop-color="#353868"/><stop offset="100%" stop-color="#0e0e1a"/></radialGradient></defs>
+        <rect width="400" height="225" fill="url(#cu-bg11)"/>
+        <ellipse cx="200" cy="100" rx="135" ry="128" fill="#3a3d70" opacity="0.2"/>
+        <path d="M0,225 Q60,178 155,194 Q200,202 245,194 Q340,178 400,225Z" fill="#1a3060"/>
+        <path d="M158,208 Q178,184 200,190 Q222,184 242,208" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.75"/>
+        <rect x="181" y="158" width="38" height="52" rx="7" fill="#d4906a"/>
+        <ellipse cx="200" cy="98" rx="88" ry="100" fill="#d4906a"/>
+        <path d="M112,82 Q116,8 200,3 Q284,8 288,82 Q274,40 200,34 Q126,40 112,82Z" fill="#2c1810"/>
+        <path d="M112,82 Q108,110 112,140 Q118,98 126,84Z" fill="#2c1810"/>
+        <path d="M288,82 Q292,110 288,140 Q282,98 274,84Z" fill="#2c1810"/>
+        <ellipse cx="112" cy="108" rx="12" ry="17" fill="#c47a56"/><ellipse cx="288" cy="108" rx="12" ry="17" fill="#c47a56"/>
+        <ellipse cx="172" cy="103" rx="16" ry="13" fill="white"/><ellipse cx="228" cy="103" rx="16" ry="13" fill="white"/>
+        <circle cx="175" cy="104" r="9" fill="#2c3e50"/><circle cx="231" cy="104" r="9" fill="#2c3e50"/>
+        <circle cx="176" cy="105" r="5" fill="#111"/><circle cx="232" cy="105" r="5" fill="#111"/>
+        <circle cx="179" cy="101" r="2.5" fill="white" opacity="0.85"/><circle cx="235" cy="101" r="2.5" fill="white" opacity="0.85"/>
+        <path d="M155,86 Q172,74 190,82" stroke="#2c1810" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+        <path d="M210,82 Q228,74 245,86" stroke="#2c1810" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+        <path d="M192,128 Q200,144 208,128" stroke="#b06040" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M180,155 Q200,168 220,155" stroke="#8b3a2a" stroke-width="3" fill="none" stroke-linecap="round"/>
+      </svg>
+      <span class="shot-badge">Close-up Shot</span>
+    </div>
+    <p class="dir-note"><strong>Camera:</strong> Slight slow push-in as principle stated &nbsp;·&nbsp; <strong>Energy:</strong> Deliberate, emphatic — pause on "what you meant" &nbsp;·&nbsp; <strong>Eye contact:</strong> Direct, unblinking</p>
+  </div>
+  <div class="slide-footer">
+    <span class="footer-item"><span>Duration:</span> ~20s</span>
+    <span class="footer-item"><span>Transition:</span> Cut</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 12 · Key Takeaways
+═══════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="slide-num">Slide 12</span>
+    <span class="slide-title-text">Key Takeaways</span>
+    <span class="slide-vtype">Animatic: Key Takeaways</span>
+    <span class="slide-duration">~0:40</span>
+  </div>
+  <div class="col-audio">
+    <div class="col-label">Audio Script</div>
+    <p class="audio-text"><span class="anim-cue">Heading</span> Three things to take away from this lesson. First — <span class="anim-cue">① Mens rea is a spectrum</span> mens rea is not one thing; it is a spectrum of mental states, each with different legal consequences. Second — <span class="anim-cue">② Presumption of mens rea</span> the presumption in Indian law is that mens rea is required, unless the statute clearly removes it. And third — <span class="anim-cue">③ Intention ≠ Knowledge</span> the distinction between intention and knowledge is not just academic; it can mean the difference between a murder charge and a lesser offence. Remember these three points for your examinations and your practice.</p>
+  </div>
+  <div class="col-visual">
+    <div class="col-label">Visual</div>
+    <div class="frame-wrap">
+      <div style="width:100%;height:100%;background:#060d1a;display:flex;flex-direction:column;justify-content:center;padding:1rem 1.4rem;gap:.55rem">
+        <div style="font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#475569;margin-bottom:.2rem;opacity:0;animation:fadeIn .3s ease .1s forwards">Key Takeaways</div>
+        <div style="display:flex;gap:.7rem;align-items:flex-start;opacity:0;animation:fadeUp .4s ease .3s forwards">
+          <div style="min-width:22px;height:22px;border-radius:50%;background:#1e3a5f;border:1.5px solid #8b5cf6;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;color:#8b5cf6;flex-shrink:0;margin-top:.05rem">1</div>
+          <span style="font-size:.8rem;color:#e2e8f0;line-height:1.5">Mens rea is a spectrum — intention, knowledge, recklessness, and negligence each attract different liability.</span>
+        </div>
+        <div style="display:flex;gap:.7rem;align-items:flex-start;opacity:0;animation:fadeUp .4s ease .75s forwards">
+          <div style="min-width:22px;height:22px;border-radius:50%;background:#1e3a5f;border:1.5px solid #8b5cf6;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;color:#8b5cf6;flex-shrink:0;margin-top:.05rem">2</div>
+          <span style="font-size:.8rem;color:#e2e8f0;line-height:1.5">The presumption is always <em>in favour</em> of mens rea; exclusion requires clear statutory language.</span>
+        </div>
+        <div style="display:flex;gap:.7rem;align-items:flex-start;opacity:0;animation:fadeUp .4s ease 1.2s forwards">
+          <div style="min-width:22px;height:22px;border-radius:50%;background:#1e3a5f;border:1.5px solid #8b5cf6;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;color:#8b5cf6;flex-shrink:0;margin-top:.05rem">3</div>
+          <span style="font-size:.8rem;color:#e2e8f0;line-height:1.5">Intention ≠ Knowledge — purpose vs. certainty; the distinction shapes how offences are charged.</span>
+        </div>
+      </div>
+    </div>
+    <p class="dir-note"><strong>Animation:</strong> Each numbered point on its verbal cue &nbsp;·&nbsp; <strong>Hold:</strong> Keep all three visible for 10s after last item appears</p>
+  </div>
+  <div class="slide-footer">
+    <span class="footer-item"><span>Duration:</span> ~40s</span>
+    <span class="footer-item"><span>Transition:</span> Cut</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 13 · Video Summary
+═══════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="slide-num">Slide 13</span>
+    <span class="slide-title-text">What We Covered</span>
+    <span class="slide-vtype">Animatic: Video Summary</span>
+    <span class="slide-duration">~0:20</span>
+  </div>
+  <div class="col-audio">
+    <div class="col-label">Audio Script</div>
+    <p class="audio-text"><span class="anim-cue">Heading</span> In this lesson we covered the definition and origins of mens rea, <span class="anim-cue">① Definition &amp; origins</span> the four degrees of mental culpability under the IPC, <span class="anim-cue">② Four degrees</span> how courts test for mens rea using a flowchart approach, <span class="anim-cue">③ Decision flow</span> the Supreme Court's position in <em>Nathulal v. State of MP</em>, <span class="anim-cue">④ Nathulal</span> and the critical distinction between intention and knowledge. <span class="anim-cue">⑤ Intention vs Knowledge</span> In the next lesson we'll look at strict liability offences — cases where the law removes the mental element entirely.</p>
+  </div>
+  <div class="col-visual">
+    <div class="col-label">Visual</div>
+    <div class="frame-wrap">
+      <div style="width:100%;height:100%;background:#060d1a;display:flex;flex-direction:column;justify-content:center;padding:1rem 1.5rem;gap:.48rem">
+        <div style="font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#475569;margin-bottom:.35rem;opacity:0;animation:fadeIn .3s ease .1s forwards">What We Covered</div>
+        <div style="display:flex;align-items:center;gap:.7rem;opacity:0;animation:fadeUp .35s ease .3s forwards">
+          <svg width="16" height="16" viewBox="0 0 16 16" style="flex-shrink:0" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7" fill="none" stroke="#10b981" stroke-width="1.5"/><path d="M4.5 8.5 7 11 11.5 5.5" stroke="#10b981" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="font-size:.8rem;color:#e2e8f0">Definition &amp; Latin origins of mens rea</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:.7rem;opacity:0;animation:fadeUp .35s ease .62s forwards">
+          <svg width="16" height="16" viewBox="0 0 16 16" style="flex-shrink:0" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7" fill="none" stroke="#10b981" stroke-width="1.5"/><path d="M4.5 8.5 7 11 11.5 5.5" stroke="#10b981" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="font-size:.8rem;color:#e2e8f0">Four degrees of culpability under the IPC</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:.7rem;opacity:0;animation:fadeUp .35s ease .94s forwards">
+          <svg width="16" height="16" viewBox="0 0 16 16" style="flex-shrink:0" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7" fill="none" stroke="#10b981" stroke-width="1.5"/><path d="M4.5 8.5 7 11 11.5 5.5" stroke="#10b981" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="font-size:.8rem;color:#e2e8f0">How courts test for mens rea (decision flow)</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:.7rem;opacity:0;animation:fadeUp .35s ease 1.26s forwards">
+          <svg width="16" height="16" viewBox="0 0 16 16" style="flex-shrink:0" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7" fill="none" stroke="#10b981" stroke-width="1.5"/><path d="M4.5 8.5 7 11 11.5 5.5" stroke="#10b981" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="font-size:.8rem;color:#e2e8f0">SC position: <em>Nathulal v. State of MP</em> (1966)</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:.7rem;opacity:0;animation:fadeUp .35s ease 1.58s forwards">
+          <svg width="16" height="16" viewBox="0 0 16 16" style="flex-shrink:0" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7" fill="none" stroke="#10b981" stroke-width="1.5"/><path d="M4.5 8.5 7 11 11.5 5.5" stroke="#10b981" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="font-size:.8rem;color:#e2e8f0">Intention vs. Knowledge — the critical distinction</span>
+        </div>
+      </div>
+    </div>
+    <p class="dir-note"><strong>Animation:</strong> Each checkmark on its verbal topic mention &nbsp;·&nbsp; <strong>Next lesson:</strong> Tease strict liability at end of instructor's audio</p>
+  </div>
+  <div class="slide-footer">
+    <span class="footer-item"><span>Duration:</span> ~20s</span>
+    <span class="footer-item"><span>Transition:</span> Cut to sign-off</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 14 · Wide Shot / Sign-off
+═══════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <span class="slide-num">Slide 14</span>
+    <span class="slide-title-text">Sign-off &amp; Next Lesson</span>
+    <span class="slide-vtype">Wide Shot</span>
+    <span class="slide-duration">~0:20</span>
+  </div>
+  <div class="col-audio">
+    <div class="col-label">Audio Script</div>
+    <p class="audio-text">Mens rea is one of those concepts that, once you truly understand it, changes how you read every criminal statute and every judgment. Keep asking the question — what did they intend, what did they know? I'll see you in the next lesson on strict liability.</p>
+  </div>
+  <div class="col-visual">
+    <div class="col-label">Visual</div>
+    <div class="frame-wrap">
+      <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
+        <defs><linearGradient id="ws-bg14" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#22273e"/><stop offset="100%" stop-color="#14182a"/></linearGradient></defs>
+        <rect width="400" height="225" fill="#0d1020"/>
+        <rect x="0" y="0" width="400" height="172" fill="url(#ws-bg14)"/>
+        <rect x="18" y="18" width="88" height="110" rx="3" fill="#1e2338" opacity="0.9"/>
+        <rect x="24" y="28" width="8" height="72" rx="1" fill="#4a5580"/><rect x="35" y="33" width="6" height="67" rx="1" fill="#354070"/><rect x="44" y="25" width="9" height="75" rx="1" fill="#5a6090"/><rect x="56" y="30" width="7" height="70" rx="1" fill="#3a4568"/><rect x="66" y="24" width="10" height="76" rx="1" fill="#4a5580"/><rect x="79" y="36" width="8" height="64" rx="1" fill="#3a4570"/>
+        <rect x="298" y="28" width="44" height="86" rx="3" fill="#19202e" opacity="0.9"/>
+        <ellipse cx="320" cy="58" rx="20" ry="24" fill="#1a3820"/><ellipse cx="308" cy="70" rx="13" ry="17" fill="#1f4025"/><ellipse cx="332" cy="64" rx="13" ry="19" fill="#163218"/><rect x="314" y="80" width="12" height="22" rx="2" fill="#2d4a1e"/>
+        <rect x="0" y="168" width="400" height="57" fill="#0e1520"/><rect x="0" y="165" width="400" height="7" fill="#1a2535"/>
+        <rect x="28" y="144" width="92" height="52" rx="3" fill="#151e30"/><rect x="33" y="147" width="82" height="43" rx="2" fill="#0a1825"/><rect x="35" y="149" width="78" height="39" rx="1" fill="#1a3a6a" opacity="0.55"/><rect x="22" y="192" width="104" height="6" rx="2" fill="#111a28"/>
+        <rect x="246" y="174" width="20" height="22" rx="4" fill="#3a4060"/><path d="M266,179 Q275,179 275,185 Q275,191 266,191" stroke="#3a4060" stroke-width="3" fill="none"/>
+        <rect x="282" y="163" width="72" height="48" rx="2" fill="#e8e0d0" transform="rotate(-4,318,187)"/><rect x="280" y="161" width="72" height="48" rx="2" fill="#f0ead8" transform="rotate(-6,316,185)"/>
+        <rect x="166" y="196" width="22" height="29" rx="3" fill="#1a2840"/><rect x="212" y="196" width="22" height="29" rx="3" fill="#1a2840"/>
+        <rect x="158" y="108" width="84" height="88" rx="10" fill="#2d4f8a"/>
+        <path d="M158,108 Q174,124 200,116 Q226,124 242,108 L238,195 Q200,200 162,195Z" fill="#1a3060"/>
+        <path d="M200,116 L213,148 L200,154 L187,148Z" fill="white" opacity="0.88"/>
+        <rect x="189" y="91" width="22" height="22" rx="5" fill="#d4906a"/>
+        <ellipse cx="200" cy="72" rx="30" ry="34" fill="#d4906a"/>
+        <path d="M170,62 Q172,24 200,20 Q228,24 230,62 Q222,38 200,34 Q178,38 170,62Z" fill="#2c1810"/>
+        <ellipse cx="170" cy="73" rx="5" ry="8" fill="#c47a56"/><ellipse cx="230" cy="73" rx="5" ry="8" fill="#c47a56"/>
+        <ellipse cx="189" cy="68" rx="6" ry="5.5" fill="white"/><ellipse cx="211" cy="68" rx="6" ry="5.5" fill="white"/>
+        <circle cx="190" cy="69" r="3.8" fill="#2c3e50"/><circle cx="212" cy="69" r="3.8" fill="#2c3e50"/>
+        <circle cx="191" cy="70" r="2.2" fill="#111"/><circle cx="213" cy="70" r="2.2" fill="#111"/>
+        <circle cx="192" cy="67" r="1.1" fill="white" opacity="0.8"/><circle cx="214" cy="67" r="1.1" fill="white" opacity="0.8"/>
+        <path d="M183,59 Q190,54 197,58" stroke="#2c1810" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+        <path d="M203,58 Q210,54 217,59" stroke="#2c1810" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+        <path d="M197,76 Q200,83 203,76" stroke="#b06040" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <path d="M192,87 Q200,93 208,87" stroke="#8b3a2a" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <rect x="152" y="162" width="96" height="18" rx="7" fill="#2d4f8a"/>
+        <ellipse cx="155" cy="171" rx="11" ry="9" fill="#d4906a"/><ellipse cx="245" cy="171" rx="11" ry="9" fill="#d4906a"/>
+      </svg>
+      <span class="shot-badge">Wide Shot</span>
+    </div>
+    <p class="dir-note"><strong>Camera:</strong> Eye level, locked off &nbsp;·&nbsp; <strong>Light:</strong> Key left, warm &nbsp;·&nbsp; <strong>Energy:</strong> Warm, encouraging close — genuine smile on "I'll see you in the next lesson"</p>
+  </div>
+  <div class="slide-footer">
+    <span class="footer-item"><span>Duration:</span> ~20s</span>
+    <span class="footer-item"><span>Transition:</span> Fade to black</span>
+    <span class="footer-item"><span>End card:</span> Cut to next-lesson CTA graphic</span>
+  </div>
+</div>
+
+</body>
+</html>

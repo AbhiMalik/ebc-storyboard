@@ -77,7 +77,7 @@ Every animatic slide includes inline `▶ cue label` badges in the audio script 
 
 ## Output example
 
-See [`_dev/storyboard-example.html`](_dev/storyboard-example.html) — a 14-slide demo on *Understanding Mens Rea in Indian Criminal Law* that exercises every slide type.
+See [`examples/storyboard-example.html`](examples/storyboard-example.html) — a 14-slide demo on *Understanding Mens Rea in Indian Criminal Law* that exercises every slide type.
 
 ## Author
 
