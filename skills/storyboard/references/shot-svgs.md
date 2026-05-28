@@ -16,13 +16,13 @@ Head fills most of the frame. Just the tops of the shoulders are visible. Use fo
 <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <radialGradient id="cu-bg" cx="50%" cy="35%" r="65%">
-      <stop offset="0%" stop-color="#353868"/>
-      <stop offset="100%" stop-color="#0e0e1a"/>
+      <stop offset="0%" stop-color="#c8cce8"/>
+      <stop offset="100%" stop-color="#a4a8d4"/>
     </radialGradient>
   </defs>
   <rect width="400" height="225" fill="url(#cu-bg)"/>
   <!-- spotlight halo -->
-  <ellipse cx="200" cy="100" rx="135" ry="128" fill="#3a3d70" opacity="0.2"/>
+  <ellipse cx="200" cy="100" rx="135" ry="128" fill="#8b5cf6" opacity="0.06"/>
   <!-- shoulders -->
   <path d="M0,225 Q60,178 155,194 Q200,202 245,194 Q340,178 400,225Z" fill="#1a3060"/>
   <!-- collar -->
@@ -74,16 +74,16 @@ Head and torso visible down to the desk edge. Hands rest on desk. The default sh
 <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <radialGradient id="ms-bg" cx="50%" cy="30%" r="70%">
-      <stop offset="0%" stop-color="#252a4a"/>
-      <stop offset="100%" stop-color="#0d1020"/>
+      <stop offset="0%" stop-color="#ccd8ec"/>
+      <stop offset="100%" stop-color="#a8b8cc"/>
     </radialGradient>
   </defs>
   <rect width="400" height="225" fill="url(#ms-bg)"/>
   <!-- desk surface -->
-  <rect x="0" y="200" width="400" height="25" fill="#0e1520"/>
-  <rect x="0" y="197" width="400" height="6" fill="#1a2535"/>
+  <rect x="0" y="200" width="400" height="25" fill="#c8d0dc"/>
+  <rect x="0" y="197" width="400" height="6" fill="#b8c4d0"/>
   <!-- laptop edge (bottom-left) -->
-  <rect x="55" y="194" width="105" height="5" rx="1" fill="#1a2840"/>
+  <rect x="55" y="194" width="105" height="5" rx="1" fill="#b8c4d4"/>
   <!-- torso + jacket -->
   <rect x="112" y="108" width="176" height="120" rx="16" fill="#2d4f8a"/>
   <path d="M112,108 Q148,130 200,120 Q252,130 288,108 L282,225 Q200,232 118,225Z" fill="#1a3060"/>
@@ -139,44 +139,44 @@ Full figure visible — seated at a desk with a bookshelf and plant in the backg
 <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="ws-wall" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#22273e"/>
-      <stop offset="100%" stop-color="#14182a"/>
+      <stop offset="0%" stop-color="#dde5f4"/>
+      <stop offset="100%" stop-color="#c8d4e8"/>
     </linearGradient>
   </defs>
-  <rect width="400" height="225" fill="#0d1020"/>
+  <rect width="400" height="225" fill="#d4dce8"/>
   <!-- back wall -->
   <rect x="0" y="0" width="400" height="172" fill="url(#ws-wall)"/>
   <!-- bookshelf (left) -->
-  <rect x="18" y="18" width="88" height="110" rx="3" fill="#1e2338" opacity="0.9"/>
-  <rect x="24" y="28" width="8" height="72" rx="1" fill="#4a5580"/>
-  <rect x="35" y="33" width="6" height="67" rx="1" fill="#354070"/>
-  <rect x="44" y="25" width="9" height="75" rx="1" fill="#5a6090"/>
-  <rect x="56" y="30" width="7" height="70" rx="1" fill="#3a4568"/>
-  <rect x="66" y="24" width="10" height="76" rx="1" fill="#4a5580"/>
-  <rect x="79" y="36" width="8" height="64" rx="1" fill="#3a4570"/>
+  <rect x="18" y="18" width="88" height="110" rx="3" fill="#e8ecf4" opacity="0.95"/>
+  <rect x="24" y="28" width="8" height="72" rx="1" fill="#5a7fc4"/>
+  <rect x="35" y="33" width="6" height="67" rx="1" fill="#8875b8"/>
+  <rect x="44" y="25" width="9" height="75" rx="1" fill="#4a8a7a"/>
+  <rect x="56" y="30" width="7" height="70" rx="1" fill="#c07840"/>
+  <rect x="66" y="24" width="10" height="76" rx="1" fill="#7a5aac"/>
+  <rect x="79" y="36" width="8" height="64" rx="1" fill="#3a7a5c"/>
   <!-- plant (right) -->
-  <rect x="298" y="28" width="44" height="86" rx="3" fill="#19202e" opacity="0.9"/>
-  <ellipse cx="320" cy="58" rx="20" ry="24" fill="#1a3820"/>
-  <ellipse cx="308" cy="70" rx="13" ry="17" fill="#1f4025"/>
-  <ellipse cx="332" cy="64" rx="13" ry="19" fill="#163218"/>
-  <rect x="314" y="80" width="12" height="22" rx="2" fill="#2d4a1e"/>
+  <rect x="298" y="28" width="44" height="86" rx="3" fill="#e0eae4" opacity="0.9"/>
+  <ellipse cx="320" cy="58" rx="20" ry="24" fill="#2a6030"/>
+  <ellipse cx="308" cy="70" rx="13" ry="17" fill="#2a6830"/>
+  <ellipse cx="332" cy="64" rx="13" ry="19" fill="#1e5025"/>
+  <rect x="314" y="80" width="12" height="22" rx="2" fill="#3a6030"/>
   <!-- desk -->
-  <rect x="0" y="168" width="400" height="57" fill="#0e1520"/>
-  <rect x="0" y="165" width="400" height="7" fill="#1a2535"/>
+  <rect x="0" y="168" width="400" height="57" fill="#c8d0dc"/>
+  <rect x="0" y="165" width="400" height="7" fill="#b8c4d0"/>
   <!-- laptop on desk -->
-  <rect x="28" y="144" width="92" height="52" rx="3" fill="#151e30"/>
-  <rect x="33" y="147" width="82" height="43" rx="2" fill="#0a1825"/>
-  <rect x="35" y="149" width="78" height="39" rx="1" fill="#1a3a6a" opacity="0.55"/>
-  <rect x="22" y="192" width="104" height="6" rx="2" fill="#111a28"/>
+  <rect x="28" y="144" width="92" height="52" rx="3" fill="#d0dae8"/>
+  <rect x="33" y="147" width="82" height="43" rx="2" fill="#c0cad8"/>
+  <rect x="35" y="149" width="78" height="39" rx="1" fill="#1a3a6a" opacity="0.75"/>
+  <rect x="22" y="192" width="104" height="6" rx="2" fill="#b0bcc8"/>
   <!-- mug -->
-  <rect x="246" y="174" width="20" height="22" rx="4" fill="#3a4060"/>
-  <path d="M266,179 Q275,179 275,185 Q275,191 266,191" stroke="#3a4060" stroke-width="3" fill="none"/>
+  <rect x="246" y="174" width="20" height="22" rx="4" fill="#5a6480"/>
+  <path d="M266,179 Q275,179 275,185 Q275,191 266,191" stroke="#5a6480" stroke-width="3" fill="none"/>
   <!-- papers -->
   <rect x="282" y="163" width="72" height="48" rx="2" fill="#e8e0d0" transform="rotate(-4,318,187)"/>
   <rect x="280" y="161" width="72" height="48" rx="2" fill="#f0ead8" transform="rotate(-6,316,185)"/>
   <!-- person — legs under desk -->
-  <rect x="166" y="196" width="22" height="29" rx="3" fill="#1a2840"/>
-  <rect x="212" y="196" width="22" height="29" rx="3" fill="#1a2840"/>
+  <rect x="166" y="196" width="22" height="29" rx="3" fill="#b0bcc8"/>
+  <rect x="212" y="196" width="22" height="29" rx="3" fill="#b0bcc8"/>
   <!-- torso -->
   <rect x="158" y="108" width="84" height="88" rx="10" fill="#2d4f8a"/>
   <path d="M158,108 Q174,124 200,116 Q226,124 242,108 L238,195 Q200,200 162,195Z" fill="#1a3060"/>
@@ -226,10 +226,10 @@ A lower-third composite combines an instructor shot (SVG) with a sliding citatio
   <!-- 1. Paste the medium or wide shot SVG here -->
 
   <!-- 2. Lower-third overlay (slides in from left) -->
-  <div style="position:absolute;bottom:0;left:0;width:66%;background:rgba(10,16,28,0.93);border-top:2px solid #3b82f6;padding:.38rem .75rem;transform:translateX(-105%);animation:slideInLT .5s cubic-bezier(.22,.61,.36,1) .6s forwards;z-index:20;backdrop-filter:blur(3px)">
+  <div style="position:absolute;bottom:0;left:0;width:66%;background:rgba(248,250,252,0.95);border-top:2px solid #3b82f6;padding:.38rem .75rem;transform:translateX(-105%);animation:slideInLT .5s cubic-bezier(.22,.61,.36,1) .6s forwards;z-index:20;backdrop-filter:blur(3px)">
     <div style="font-size:.56rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#3b82f6;margin-bottom:.15rem">Reference</div>
-    <div style="font-size:.72rem;color:#e2e8f0;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Citation text, case name, or URL here</div>
-    <div style="font-size:.6rem;color:#64748b;margin-top:.08rem">Source · Publication · Year</div>
+    <div style="font-size:.72rem;color:#1e293b;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Citation text, case name, or URL here</div>
+    <div style="font-size:.6rem;color:#94a3b8;margin-top:.08rem">Source · Publication · Year</div>
   </div>
 
   <!-- 3. Shot badge (top-right, as usual) -->
