@@ -109,6 +109,10 @@ Read the animatic snippets from:
     <p class="sb-cue-legend">Inline <span class="anim-cue" style="pointer-events:none">cue label</span> badges mark the exact narration point at which the named graphic element should appear on screen.</p>
   </header>
   [slides…]
+  <script>
+    document.querySelectorAll('.frame-wrap').forEach(function(f){f._orig=f.innerHTML});
+    function replaySlide(btn){var f=btn.closest('.slide').querySelector('.frame-wrap');if(f&&f._orig)f.innerHTML=f._orig}
+  </script>
 </body>
 </html>
 ```
@@ -150,6 +154,8 @@ body{background:#f0f4f8;color:#1e293b;font-family:ui-sans-serif,system-ui,-apple
 .anim-cue{display:inline-flex;align-items:center;background:rgba(59,130,246,.07);border:1px solid rgba(59,130,246,.2);color:#3b82f6;font-size:.57rem;font-weight:700;padding:.08rem .38rem .08rem .26rem;border-radius:3px;letter-spacing:.02em;vertical-align:middle;white-space:nowrap;margin:0 3px;font-style:normal;line-height:1.5;user-select:none}
 .anim-cue::before{content:'▶';font-size:.44rem;margin-right:.22rem;opacity:.6}
 .sb-cue-legend{color:#94a3b8;font-size:.7rem;margin-top:.55rem;text-align:center}
+.replay-btn{background:none;border:1px solid #e2e8f0;border-radius:4px;padding:.18rem .5rem;font-size:.65rem;font-weight:700;color:#94a3b8;cursor:pointer;letter-spacing:.04em;display:flex;align-items:center;gap:.25rem;margin-left:.5rem;transition:color .15s,border-color .15s,background .15s;font-family:inherit}
+.replay-btn:hover{color:#3b82f6;border-color:#bfdbfe;background:#eff6ff}
 @keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 @keyframes scaleIn{from{opacity:0;transform:scaleX(0)}to{opacity:1;transform:scaleX(1)}}
@@ -166,6 +172,7 @@ body{background:#f0f4f8;color:#1e293b;font-family:ui-sans-serif,system-ui,-apple
     <span class="slide-title-text">Welcome &amp; Introduction</span>
     <span class="slide-vtype">Wide Shot</span>
     <span class="slide-duration">~0:20</span>
+    <button class="replay-btn" onclick="replaySlide(this)">↺ Replay</button>
   </div>
   <div class="col-audio">
     <div class="col-label">Audio Script</div>
@@ -196,6 +203,7 @@ body{background:#f0f4f8;color:#1e293b;font-family:ui-sans-serif,system-ui,-apple
     <span class="slide-title-text">Three Core Principles</span>
     <span class="slide-vtype">Animatic: Bullet Reveal</span>
     <span class="slide-duration">~0:35</span>
+    <button class="replay-btn" onclick="replaySlide(this)">↺ Replay</button>
   </div>
   <div class="col-audio">
     <div class="col-label">Audio Script</div>

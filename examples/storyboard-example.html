@@ -45,6 +45,8 @@
     .anim-cue{display:inline-flex;align-items:center;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.22);color:#60a5fa;font-size:.57rem;font-weight:700;padding:.08rem .38rem .08rem .26rem;border-radius:3px;letter-spacing:.02em;vertical-align:middle;white-space:nowrap;margin:0 3px;font-style:normal;line-height:1.5;user-select:none}
     .anim-cue::before{content:'▶';font-size:.44rem;margin-right:.22rem;opacity:.6}
     .sb-cue-legend{color:#334155;font-size:.7rem;margin-top:.55rem;text-align:center}
+    .replay-btn{background:none;border:1px solid #1e293b;border-radius:4px;padding:.18rem .5rem;font-size:.65rem;font-weight:700;color:#475569;cursor:pointer;letter-spacing:.04em;display:flex;align-items:center;gap:.25rem;margin-left:.5rem;transition:color .15s,border-color .15s,background .15s;font-family:inherit}
+    .replay-btn:hover{color:#60a5fa;border-color:#1e4080;background:rgba(59,130,246,.1)}
   </style>
 </head>
 <body>
@@ -64,6 +66,7 @@
     <span class="slide-title-text">Opening Hook</span>
     <span class="slide-vtype">Wide Shot</span>
     <span class="slide-duration">~0:30</span>
+    <button class="replay-btn" onclick="replaySlide(this)">↺ Replay</button>
   </div>
   <div class="col-audio">
     <div class="col-label">Audio Script</div>
@@ -122,6 +125,7 @@
     <span class="slide-title-text">Section Title: What is Mens Rea?</span>
     <span class="slide-vtype">Animatic: Title Card</span>
     <span class="slide-duration">~0:10</span>
+    <button class="replay-btn" onclick="replaySlide(this)">↺ Replay</button>
   </div>
   <div class="col-audio">
     <div class="col-label">Audio Script</div>
@@ -154,6 +158,7 @@
     <span class="slide-title-text">The Latin Maxim</span>
     <span class="slide-vtype">Animatic: Featured Quote</span>
     <span class="slide-duration">~0:25</span>
+    <button class="replay-btn" onclick="replaySlide(this)">↺ Replay</button>
   </div>
   <div class="col-audio">
     <div class="col-label">Audio Script</div>
@@ -189,6 +194,7 @@
     <span class="slide-title-text">Mens Rea in the IPC</span>
     <span class="slide-vtype">Medium Shot + Lower Third</span>
     <span class="slide-duration">~0:35</span>
+    <button class="replay-btn" onclick="replaySlide(this)">↺ Replay</button>
   </div>
   <div class="col-audio">
     <div class="col-label">Audio Script</div>
@@ -251,6 +257,7 @@
     <span class="slide-title-text">IPC Section 300 — Murder</span>
     <span class="slide-vtype">Animatic: Legal Extract — Statute</span>
     <span class="slide-duration">~0:40</span>
+    <button class="replay-btn" onclick="replaySlide(this)">↺ Replay</button>
   </div>
   <div class="col-audio">
     <div class="col-label">Audio Script</div>
@@ -291,6 +298,7 @@
     <span class="slide-title-text">Four Degrees of Mens Rea</span>
     <span class="slide-vtype">Animatic: Bullet Reveal</span>
     <span class="slide-duration">~0:50</span>
+    <button class="replay-btn" onclick="replaySlide(this)">↺ Replay</button>
   </div>
   <div class="col-audio">
     <div class="col-label">Audio Script</div>
@@ -336,6 +344,7 @@
     <span class="slide-title-text">Elements of a Criminal Offence</span>
     <span class="slide-vtype">Animatic: Flowchart — Linear</span>
     <span class="slide-duration">~0:30</span>
+    <button class="replay-btn" onclick="replaySlide(this)">↺ Replay</button>
   </div>
   <div class="col-audio">
     <div class="col-label">Audio Script</div>
@@ -398,6 +407,7 @@
     <span class="slide-title-text">With or Without Mens Rea?</span>
     <span class="slide-vtype">Animatic: Flowchart — Decision</span>
     <span class="slide-duration">~0:35</span>
+    <button class="replay-btn" onclick="replaySlide(this)">↺ Replay</button>
   </div>
   <div class="col-audio">
     <div class="col-label">Audio Script</div>
@@ -469,6 +479,7 @@
     <span class="slide-title-text">SC on Mens Rea — Nathulal v. State of MP</span>
     <span class="slide-vtype">Animatic: Legal Extract — Judgment</span>
     <span class="slide-duration">~0:45</span>
+    <button class="replay-btn" onclick="replaySlide(this)">↺ Replay</button>
   </div>
   <div class="col-audio">
     <div class="col-label">Audio Script</div>
@@ -514,6 +525,7 @@
     <span class="slide-title-text">Intention vs. Knowledge — The Distinction</span>
     <span class="slide-vtype">Animatic: Split Screen</span>
     <span class="slide-duration">~0:35</span>
+    <button class="replay-btn" onclick="replaySlide(this)">↺ Replay</button>
   </div>
   <div class="col-audio">
     <div class="col-label">Audio Script</div>
@@ -555,6 +567,7 @@
     <span class="slide-title-text">The Core Principle</span>
     <span class="slide-vtype">Close-up Shot</span>
     <span class="slide-duration">~0:20</span>
+    <button class="replay-btn" onclick="replaySlide(this)">↺ Replay</button>
   </div>
   <div class="col-audio">
     <div class="col-label">Audio Script</div>
@@ -603,6 +616,7 @@
     <span class="slide-title-text">Key Takeaways</span>
     <span class="slide-vtype">Animatic: Key Takeaways</span>
     <span class="slide-duration">~0:40</span>
+    <button class="replay-btn" onclick="replaySlide(this)">↺ Replay</button>
   </div>
   <div class="col-audio">
     <div class="col-label">Audio Script</div>
@@ -644,6 +658,7 @@
     <span class="slide-title-text">What We Covered</span>
     <span class="slide-vtype">Animatic: Video Summary</span>
     <span class="slide-duration">~0:20</span>
+    <button class="replay-btn" onclick="replaySlide(this)">↺ Replay</button>
   </div>
   <div class="col-audio">
     <div class="col-label">Audio Script</div>
@@ -693,6 +708,7 @@
     <span class="slide-title-text">Sign-off &amp; Next Lesson</span>
     <span class="slide-vtype">Wide Shot</span>
     <span class="slide-duration">~0:20</span>
+    <button class="replay-btn" onclick="replaySlide(this)">↺ Replay</button>
   </div>
   <div class="col-audio">
     <div class="col-label">Audio Script</div>
@@ -743,5 +759,9 @@
   </div>
 </div>
 
+  <script>
+    document.querySelectorAll('.frame-wrap').forEach(function(f){f._orig=f.innerHTML});
+    function replaySlide(btn){var f=btn.closest('.slide').querySelector('.frame-wrap');if(f&&f._orig)f.innerHTML=f._orig}
+  </script>
 </body>
 </html>
