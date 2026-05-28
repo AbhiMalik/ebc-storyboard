@@ -40,21 +40,34 @@ A single self-contained HTML file — open it in any browser, no server needed. 
 ## Installation
 
 ```bash
-git clone https://github.com/EBCLearning/ebc-storyboard ~/plugins/ebc-storyboard
+git clone https://github.com/AbhiMalik/ebc-storyboard ~/plugins/ebc-storyboard
 ```
 
-Then in any Claude Code session:
+Optionally add a shell alias so you don't have to type the full command each time:
 
-```
-/plugin install ~/plugins/ebc-storyboard
+```bash
+echo 'alias storyboard="claude --model claude-haiku-4-5-20251001 --plugin-dir ~/plugins/ebc-storyboard"' >> ~/.zshrc
+source ~/.zshrc
 ```
 
 ## Usage
 
-Paste your video script and invoke the skill:
+Launch Claude Code with the plugin loaded (run this in Terminal from the folder where you want the storyboard saved):
+
+```bash
+claude --model claude-haiku-4-5-20251001 --plugin-dir ~/plugins/ebc-storyboard
+```
+
+Or if you added the alias:
+
+```bash
+storyboard
+```
+
+Then paste your video script and invoke the skill:
 
 ```
-/storyboard
+/ebc-storyboard:storyboard
 
 [Your script here]
 ```
@@ -64,7 +77,7 @@ Claude will segment the script, assign a visual type to each segment, and write 
 You can also specify a filename:
 
 ```
-/storyboard Save as module-3-mens-rea.html
+/ebc-storyboard:storyboard Save as module-3-mens-rea.html
 
 [Script here]
 ```
