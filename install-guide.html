@@ -105,12 +105,12 @@
       <div class="step">
         <div class="step-num">2</div>
         <div class="step-body">
-          <p class="step-label">Add a shortcut to your shell (optional but recommended)</p>
-          <p class="step-desc">To avoid typing a long path each session, add this alias to your <span class="inline-code">~/.zshrc</span> file:</p>
-          <div class="code-block"><code><span class="comment"># Open Terminal and run:</span>
-<span class="cmd">echo</span> <span class="flag">'alias storyboard="claude --plugin-dir ~/plugins/ebc-storyboard"'</span> >> ~/.zshrc
+          <p class="step-label">Create a shortcut command (optional but recommended)</p>
+          <p class="step-desc">Every time you want to use the skill, you need to launch Claude Code with a long command. You can create a short nickname for it so you don't have to type the full thing each time.</p>
+          <p class="step-desc" style="margin-top:.4rem">Run these two lines in Terminal:</p>
+          <div class="code-block"><code><span class="cmd">echo</span> <span class="flag">'alias storyboard="claude --plugin-dir ~/plugins/ebc-storyboard"'</span> >> ~/.zshrc
 <span class="cmd">source</span> ~/.zshrc</code></div>
-          <div class="callout">After this, you can launch the storyboard session by typing <strong>storyboard</strong> in Terminal instead of the full command.</div>
+          <div class="callout">This registers <strong>storyboard</strong> as a shortcut. From now on, whenever you open Terminal and type <strong>storyboard</strong> and press Enter, it is exactly the same as typing the full <strong>claude --plugin-dir ~/plugins/ebc-storyboard</strong> command. You only need to do this setup once.</div>
         </div>
       </div>
 
@@ -126,11 +126,11 @@
         <div class="step-num">1</div>
         <div class="step-body">
           <p class="step-label">Launch Claude Code with the plugin loaded</p>
-          <p class="step-desc">Open Terminal, <span class="inline-code">cd</span> into any folder you want the storyboard saved in, then run:</p>
+          <p class="step-desc">Open Terminal and run the following command. This opens a Claude Code session that has the storyboard skill available.</p>
           <div class="code-block"><code><span class="cmd">claude</span> <span class="flag">--plugin-dir</span> <span class="path">~/plugins/ebc-storyboard</span></code></div>
-          <p class="step-desc" style="margin-top:.5rem">Or if you added the shell alias in the setup step:</p>
+          <p class="step-desc" style="margin-top:.5rem">If you created the shortcut in the setup step, you can just type this instead:</p>
           <div class="code-block"><code><span class="cmd">storyboard</span></code></div>
-          <div class="callout-info callout">The <span class="inline-code" style="color:inherit">--plugin-dir</span> flag must be passed each time you launch Claude Code for the skill to be available. It is not a one-time install.</div>
+          <div class="callout-info callout"><strong>Note:</strong> You need to do this every time — the plugin is not permanently installed. Each Claude Code session needs to be started this way for the skill to be available.</div>
         </div>
       </div>
 
