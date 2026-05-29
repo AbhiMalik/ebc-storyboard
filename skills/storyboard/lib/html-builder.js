@@ -54,21 +54,27 @@ class HTMLBuilder {
   }
 
   extractAnimaticByType(animType) {
-    const patterns = {
-      'bullet-reveal': /## bullet-reveal[\s\S]*?(?=##[^#]|$)/i,
-      'title-card': /## title-card[\s\S]*?(?=##[^#]|$)/i,
-      'flowchart-linear': /## flowchart-linear[\s\S]*?(?=##[^#]|$)/i,
-      'split-screen': /## split-screen[\s\S]*?(?=##[^#]|$)/i,
-      'quote': /## quote[\s\S]*?(?=##[^#]|$)/i,
-      'featured-quote': /## featured-quote[\s\S]*?(?=##[^#]|$)/i,
-      'legal-extract-statute': /## legal-extract-statute[\s\S]*?(?=##[^#]|$)/i,
-      'legal-extract-judgment': /## legal-extract-judgment[\s\S]*?(?=##[^#]|$)/i,
-      'key-takeaways': /## key-takeaways[\s\S]*?(?=##[^#]|$)/i,
-    };
+    const type = animType?.toLowerCase() || 'bullet-reveal';
 
-    const pattern = patterns[animType?.toLowerCase()] || patterns['bullet-reveal'];
-    const match = this.animatics.match(pattern);
-    return match ? match[0].replace(/^##.*\n/, '').replace(/```html\n/g, '').replace(/\n```/g, '') : this.getPlaceholderAnimatic(animType);
+    // Extract section from ## header to next ## or end
+    const sectionRegex = new RegExp(`## ${type}[\\s\\S]*?(?=\\n## |$)`, 'i');
+    const sectionMatch = this.animatics.match(sectionRegex);
+
+    if (!sectionMatch) {
+      return this.getPlaceholderAnimatic(animType);
+    }
+
+    const section = sectionMatch[0];
+
+    // Extract HTML from code block (look for ```html...``` or ```...```)
+    const codeBlockRegex = /```html?\n([\s\S]*?)\n```/;
+    const codeMatch = section.match(codeBlockRegex);
+
+    if (codeMatch && codeMatch[1]) {
+      return codeMatch[1].trim();
+    }
+
+    return this.getPlaceholderAnimatic(animType);
   }
 
   getPlaceholderAnimatic(animType = 'bullet-reveal') {
