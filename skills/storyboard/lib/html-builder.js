@@ -97,12 +97,11 @@ class HTMLBuilder {
   }
 
   getPlaceholderAnimatic(animType = 'bullet-reveal') {
-    return `<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1920" height="1080" fill="#f8fafc"/>
-  <text x="960" y="540" font-size="32" text-anchor="middle" fill="#94a3b8">
-    ${animType} Animation
-  </text>
-</svg>`;
+    const typeDisplay = animType.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+    return `<div style="width:100%;height:100%;background:#f4f7fb;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:2rem;text-align:center;">
+  <div style="font-size:24px;font-weight:700;color:#334155;margin-bottom:0.5rem;">${typeDisplay}</div>
+  <div style="font-size:14px;color:#94a3b8;">Animated graphic</div>
+</div>`;
   }
 
   buildImageFrame(imageData) {
@@ -224,8 +223,11 @@ class HTMLBuilder {
     }
 
     if (slide.visualType === 'image') {
+      const promptText = imageData && imageData.prompt
+        ? imageData.prompt.replace(/Style:.*?(?=Style:|$)/g, '').trim()
+        : 'Professional photography of Indian professionals in workplace scenario';
+
       if (imageData && imageData.type === 'video') {
-        const promptText = imageData.prompt ? imageData.prompt.replace(/Style:.*?(?=Style:|$)/g, '').trim() : 'N/A';
         return `
           <div class="note-section">
             <strong>AI Image Prompt:</strong><br>
@@ -256,9 +258,13 @@ class HTMLBuilder {
       }
       return `
         <div class="note-section">
+          <strong>AI Image Prompt:</strong><br>
+          <span class="prompt-text">${this.escapeHTML(promptText)}</span>
+        </div>
+        <div class="note-section">
           <strong>Image Specifications:</strong><br>
           • Source: AI-generated (Midjourney)<br>
-          • Resolution: 1920×1080 (Full HD)<br>
+          • Resolution: 1024×1024 (rendered at 1920×1080)<br>
           • Style: Professional photography<br>
           • Subjects: Indian professionals
         </div>
