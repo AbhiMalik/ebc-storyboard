@@ -33,15 +33,34 @@ class HTMLBuilder {
   }
 
   extractSVGByType(shotType) {
-    const patterns = {
-      'wide': /## Wide Shot[\s\S]*?<svg[\s\S]*?<\/svg>/i,
-      'medium': /## Medium Shot[\s\S]*?<svg[\s\S]*?<\/svg>/i,
-      'close-up': /## Close-up Shot[\s\S]*?<svg[\s\S]*?<\/svg>/i,
+    const type = shotType?.toLowerCase() || 'medium';
+    const typeMap = {
+      'wide': 'Wide Shot',
+      'medium': 'Medium Shot',
+      'close-up': 'Close-up Shot',
     };
 
-    const pattern = patterns[shotType?.toLowerCase()] || patterns.medium;
-    const match = this.shotSVGs.match(pattern);
-    return match ? match[0].replace(/^##.*\n/, '').replace(/```html\n/, '').replace(/\n```/, '') : this.getPlaceholderSVG(shotType);
+    const headerText = typeMap[type] || typeMap.medium;
+
+    // Find the section starting with the header
+    const sectionRegex = new RegExp(`## ${headerText}[\\s\\S]*?(?=\\n## |$)`, 'i');
+    const sectionMatch = this.shotSVGs.match(sectionRegex);
+
+    if (!sectionMatch) {
+      return this.getPlaceholderSVG(shotType);
+    }
+
+    const section = sectionMatch[0];
+
+    // Extract SVG specifically from code block
+    const svgRegex = /<svg[\s\S]*?<\/svg>/;
+    const svgMatch = section.match(svgRegex);
+
+    if (svgMatch && svgMatch[0]) {
+      return svgMatch[0];
+    }
+
+    return this.getPlaceholderSVG(shotType);
   }
 
   getPlaceholderSVG(shotType = 'medium') {
