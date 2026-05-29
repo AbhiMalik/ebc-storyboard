@@ -72,7 +72,7 @@ class HTMLBuilder {
 </svg>`;
   }
 
-  extractAnimaticByType(animType) {
+  extractAnimaticByType(animType, slideText = '') {
     const type = animType?.toLowerCase() || 'bullet-reveal';
 
     // Extract section from ## header to next ## or end
@@ -90,10 +90,48 @@ class HTMLBuilder {
     const codeMatch = section.match(codeBlockRegex);
 
     if (codeMatch && codeMatch[1]) {
-      return codeMatch[1].trim();
+      let html = codeMatch[1].trim();
+
+      // Personalize template with actual slide content
+      html = this.personalizeAnimatic(html, animType, slideText);
+
+      return html;
     }
 
     return this.getPlaceholderAnimatic(animType);
+  }
+
+  personalizeAnimatic(html, animType, slideText = '') {
+    if (!slideText) return html;
+
+    const type = animType?.toLowerCase() || 'bullet-reveal';
+
+    // Extract key points or lines from slide text
+    const lines = slideText.split(/[\.;•\n]+/).map(s => s.trim()).filter(s => s.length > 10);
+
+    if (type === 'bullet-reveal' && lines.length > 0) {
+      // Replace placeholder bullet points with actual content
+      html = html.replace(/>Point one<[^>]*>[^<]*</, `>${this.escapeHTML(lines[0])}<`);
+      if (lines[1]) html = html.replace(/>Point two<[^>]*>[^<]*</, `>${this.escapeHTML(lines[1])}<`);
+      if (lines[2]) html = html.replace(/>Point three<[^>]*>[^<]*</, `>${this.escapeHTML(lines[2])}<`);
+    }
+
+    if (type === 'title-card') {
+      // Use first phrase as section title
+      const title = lines[0]?.substring(0, 50) || 'Section Title';
+      html = html.replace(/>Section Title</, `>${this.escapeHTML(title)}<`);
+    }
+
+    if (type === 'legal-extract-judgment') {
+      // For legal extracts, if we don't have real judgment text, use a simplified note
+      if (!slideText.includes('SC') && !slideText.includes('paragraph')) {
+        // Replace with actual slide content instead of invented legal text
+        html = html.replace(/>SUPREME COURT OF INDIA<[\s\S]*?<\/div>/,
+          `><strong>Note:</strong> ${this.escapeHTML(slideText.substring(0, 100))}...</div>`);
+      }
+    }
+
+    return html;
   }
 
   getPlaceholderAnimatic(animType = 'bullet-reveal') {
@@ -145,7 +183,7 @@ class HTMLBuilder {
       visual = this.extractSVGByType(shotType);
       visualLabel = `${shotType} Shot`;
     } else {
-      visual = this.extractAnimaticByType(slide.animaticType);
+      visual = this.extractAnimaticByType(slide.animaticType, slide.text);
       visualLabel = slide.animaticType || 'Animatic';
     }
 
