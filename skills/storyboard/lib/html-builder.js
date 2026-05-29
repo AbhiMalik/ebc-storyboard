@@ -345,6 +345,11 @@ body{background:#f0f4f8;color:#1e293b;font-family:ui-sans-serif,system-ui,-apple
 .footer-item span{color:#64748b;font-weight:600}
 .replay-btn{background:none;border:1px solid #e2e8f0;border-radius:4px;padding:.18rem .5rem;font-size:.65rem;font-weight:700;color:#94a3b8;cursor:pointer;letter-spacing:.04em;display:flex;align-items:center;gap:.25rem;margin-left:.5rem;transition:color .15s,border-color .15s,background .15s;font-family:inherit}
 .replay-btn:hover{color:#3b82f6;border-color:#bfdbfe;background:#eff6ff}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes scaleIn{from{opacity:0;transform:scaleX(0)}to{opacity:1;transform:scaleX(1)}}
+@keyframes boxPop{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
+@keyframes slideInLT{from{transform:translateX(-105%)}to{transform:translateX(0)}}
 @media(max-width:1200px){.slide{grid-template-columns:1fr 1fr;max-width:900px}.col-direction{grid-column:1/-1;border-top:1px solid #e8edf4;border-right:none;padding:.75rem 1.5rem}}
 @media(max-width:800px){.slide{grid-template-columns:1fr}.col-audio{border-right:none;border-bottom:1px solid #e8edf4}.col-visual{border-right:none;border-bottom:1px solid #e8edf4}.col-direction{grid-column:1/-1;border-top:1px solid #e8edf4;border-right:none}}`;
   }
