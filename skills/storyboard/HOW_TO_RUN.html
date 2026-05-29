@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Storyboard Skill v2.0 — How to Run</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+    }
+
+    header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+
+    section:last-child {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      color: #667eea;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      color: #764ba2;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: #555;
+    }
+
+    code {
+      background: #f5f5f5;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+      color: #d63384;
+    }
+
+    pre {
+      background: #1e1e1e;
+      color: #d4d4d4;
+      padding: 1.5rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0;
+      font-family: 'Courier New', monospace;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+      color: inherit;
+    }
+
+    .comment { color: #6a9955; }
+    .keyword { color: #569cd6; }
+    .string { color: #ce9178; }
+    .command { color: #4ec9b0; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      background: #fafafa;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th {
+      background: #667eea;
+      color: white;
+      padding: 1rem;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .file-tree {
+      background: #f5f5f5;
+      border-left: 4px solid #667eea;
+      padding: 1rem;
+      border-radius: 4px;
+      font-family: monospace;
+      line-height: 1.8;
+    }
+
+    .file-tree code {
+      background: none;
+      color: #333;
+      padding: 0;
+    }
+
+    .step {
+      background: #f0f4ff;
+      border-left: 4px solid #667eea;
+      padding: 1rem 1.5rem;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+    }
+
+    .step strong {
+      color: #667eea;
+    }
+
+    .success {
+      background: #e8f5e9;
+      border-left: 4px solid #4caf50;
+      padding: 1rem 1.5rem;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+    }
+
+    .success strong {
+      color: #2e7d32;
+    }
+
+    .warning {
+      background: #fff3e0;
+      border-left: 4px solid #ff9800;
+      padding: 1rem 1.5rem;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+    }
+
+    .warning strong {
+      color: #e65100;
+    }
+
+    .tip {
+      background: #e3f2fd;
+      border-left: 4px solid #2196f3;
+      padding: 1rem 1.5rem;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+    }
+
+    .tip strong {
+      color: #1565c0;
+    }
+
+    ul, ol {
+      margin-left: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .example-box {
+      background: #f5f5f5;
+      border: 1px solid #e0e0e0;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+
+    .example-box strong {
+      color: #667eea;
+    }
+
+    footer {
+      background: #f5f5f5;
+      padding: 2rem;
+      text-align: center;
+      color: #666;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .emoji {
+      font-size: 1.2em;
+      margin-right: 0.3rem;
+    }
+
+    a {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid #e0e0e0;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #667eea;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><span class="emoji">🎬</span> Storyboard Skill v2.0</h1>
+      <p>How to Run the Professional AI Storyboard Generator</p>
+    </header>
+
+    <main>
+      <!-- Setup Section -->
+      <section>
+        <h2><span class="emoji">🚀</span> Step 1: One-Time Setup</h2>
+        <p>Complete this only the first time you use the skill.</p>
+
+        <h3>Navigate to the skill directory:</h3>
+        <pre><code><span class="command">cd /Users/abhinandan/plugins/ebc-storyboard/skills/storyboard</span></code></pre>
+
+        <h3>Copy the environment template:</h3>
+        <pre><code><span class="command">cp examples/.env.example .env</span></code></pre>
+
+        <h3>Edit .env and add your API keys:</h3>
+        <pre><code><span class="command">nano .env</span></code></pre>
+
+        <p>Add these lines to the .env file:</p>
+        <pre><code><span class="keyword">MIDJOURNEY_API_KEY</span>=afk_your_key_here
+<span class="keyword">RUNWAY_ML_API_KEY</span>=key_your_key_here</code></pre>
+
+        <div class="step">
+          <strong>💡 Tip:</strong> Get your keys from:
+          <ul>
+            <li>Midjourney: <a href="https://apiframe.pro" target="_blank">https://apiframe.pro</a></li>
+            <li>Runway ML: <a href="https://app.runwayml.com" target="_blank">https://app.runwayml.com</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Generate Section -->
+      <section>
+        <h2><span class="emoji">📝</span> Step 2: Generate a Storyboard</h2>
+        <p>From the skill directory, run one of these commands:</p>
+
+        <h3>Option A: Basic HTML only (no videos)</h3>
+        <pre><code><span class="command">node storyboard-generator.js your-script.txt --output "Module Name"</span></code></pre>
+
+        <h3>Option B: With AI images + B-roll videos (RECOMMENDED)</h3>
+        <pre><code><span class="command">node storyboard-generator.js your-script.txt --video --output "Module Name"</span></code></pre>
+
+        <h3>Option C: Without image generation (placeholders only)</h3>
+        <pre><code><span class="command">node storyboard-generator.js your-script.txt --no-images --output "Module Name"</span></code></pre>
+
+        <div class="success">
+          <strong>✓ Expected output:</strong>
+          <pre><code>📖 Parsing script...
+✓ Parsed 9 slides (~1:45)
+
+🎨 Generating images...
+✓ Image generation succeeded: 4 images
+
+📹 Generating B-roll videos...
+✓ Video generation succeeded
+
+📝 Building HTML...
+✓ Storyboard saved: Module Name.html
+
+✨ Generation complete!
+   Slides: 9
+   Total cost: $1.54
+   Time: 155s</code></pre>
+        </div>
+      </section>
+
+      <!-- View Section -->
+      <section>
+        <h2><span class="emoji">👀</span> Step 3: View Your Storyboard</h2>
+        <p>Open the generated HTML file in your browser:</p>
+        <pre><code><span class="command">open "Module Name.html"</span></code></pre>
+
+        <div class="success">
+          <strong>✓ You'll see:</strong>
+          <ul>
+            <li>3-column professional storyboard</li>
+            <li>Audio script on the left</li>
+            <li>Embedded video players in the middle</li>
+            <li>Detailed production notes on the right</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Command Options -->
+      <section>
+        <h2><span class="emoji">⚙️</span> Command Options Reference</h2>
+        <pre><code><span class="keyword">node storyboard-generator.js</span> &lt;script-file&gt; [options]
+
+Options:
+  --video              <span class="comment"># Generate B-roll videos (Runway ML)</span>
+  --no-images          <span class="comment"># Skip image generation (use SVG placeholders)</span>
+  --output NAME        <span class="comment"># Output filename (default: storyboard)</span></code></pre>
+
+        <h3>Examples:</h3>
+        <pre><code><span class="comment"># Basic HTML</span>
+<span class="command">node storyboard-generator.js training.txt</span>
+
+<span class="comment"># With images and videos</span>
+<span class="command">node storyboard-generator.js training.txt --video</span>
+
+<span class="comment"># With custom output name</span>
+<span class="command">node storyboard-generator.js training.txt --video --output "My Module"</span>
+
+<span class="comment"># With placeholders only</span>
+<span class="command">node storyboard-generator.js training.txt --no-images --output "Draft"</span></code></pre>
+      </section>
+
+      <!-- Timeline -->
+      <section>
+        <h2><span class="emoji">⏱️</span> Timeline & Performance</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Command</th>
+              <th>Time</th>
+              <th>What It Includes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>--output NAME</code></td>
+              <td>~1 minute</td>
+              <td>HTML only (no videos)</td>
+            </tr>
+            <tr>
+              <td><code>--video --output NAME</code></td>
+              <td>5-7 minutes</td>
+              <td>Images + videos + HTML</td>
+            </tr>
+            <tr>
+              <td><code>--no-images --output NAME</code></td>
+              <td>~30 seconds</td>
+              <td>HTML with placeholder graphics</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Real Example -->
+      <section>
+        <h2><span class="emoji">📂</span> Real Usage Example</h2>
+        <p>Using the test script included with the skill:</p>
+
+        <h3>Run the command:</h3>
+        <pre><code><span class="command">cd /Users/abhinandan/plugins/ebc-storyboard/skills/storyboard</span>
+
+<span class="command">node storyboard-generator.js scripts/simulation-2-performance-vs-harassment.txt \
+  --video \
+  --output "POSH Training Module"</span></code></pre>
+
+        <h3>Files created:</h3>
+        <div class="file-tree">
+<code>POSH Training Module.html
+POSH Training Module-metrics.json
+POSH Training Module_videos/
+  ├── slide_1_timestamp.mp4
+  ├── slide_2_timestamp.mp4
+  └── slide_7_timestamp.mp4</code>
+        </div>
+
+        <h3>Open in browser:</h3>
+        <pre><code><span class="command">open "POSH Training Module.html"</span></code></pre>
+      </section>
+
+      <!-- Output Files -->
+      <section>
+        <h2><span class="emoji">📁</span> Output Files</h2>
+        <p>After running with <code>--video</code>, you get three items:</p>
+
+        <div class="example-box">
+          <strong>1. Module Name.html</strong>
+          <p>Professional 3-column storyboard. Open in any browser. Ready to share.</p>
+
+          <strong>2. Module Name_videos/ folder</strong>
+          <p>Contains MP4 video files. One file per video slide. Ready for production.</p>
+
+          <strong>3. Module Name-metrics.json</strong>
+          <p>Cost breakdown and generation metrics. Track your spending and timing.</p>
+        </div>
+      </section>
+
+      <!-- Pro Tips -->
+      <section>
+        <h2><span class="emoji">💡</span> Pro Tips</h2>
+
+        <div class="tip">
+          <strong>Tip 1: Start Simple</strong>
+          <p>First time? Start without videos to test:</p>
+          <pre><code><span class="command">node storyboard-generator.js test-script.txt --output "test"</span></code></pre>
+          <p>Quick (30 seconds), no API calls needed.</p>
+        </div>
+
+        <div class="tip">
+          <strong>Tip 2: Full Production</strong>
+          <p>Use videos for final, professional output:</p>
+          <pre><code><span class="command">node storyboard-generator.js script.txt --video --output "Final Module"</span></code></pre>
+          <p>Complete (5-7 minutes), professional cinema-grade quality.</p>
+        </div>
+
+        <div class="tip">
+          <strong>Tip 3: Team Sharing</strong>
+          <p>Bundle everything for easy sharing:</p>
+          <pre><code><span class="command">zip -r "Module.zip" "Module.html" "Module_videos/"</span></code></pre>
+          <p>Send the zip to your production team. Everything is self-contained.</p>
+        </div>
+
+        <div class="tip">
+          <strong>Tip 4: Check Costs</strong>
+          <p>View the cost breakdown:</p>
+          <pre><code><span class="command">cat "Module-metrics.json" | jq '.imageMetrics, .videoMetrics'</span></code></pre>
+          <p>See exactly what you spent on images and videos.</p>
+        </div>
+      </section>
+
+      <!-- Typical Workflow -->
+      <section>
+        <h2><span class="emoji">🎯</span> Typical Complete Workflow</h2>
+        <pre><code><span class="comment"># 1. Create your training script</span>
+<span class="command">cat > my-training.txt << 'EOF'</span>
+Instructor: Welcome to this training module...
+[rest of your script]
+<span class="command">EOF</span>
+
+<span class="comment"># 2. Generate storyboard with videos</span>
+<span class="command">node storyboard-generator.js my-training.txt --video --output "Training Module"</span>
+
+<span class="comment"># Wait 5-7 minutes for generation...</span>
+
+<span class="comment"># 3. Open in browser</span>
+<span class="command">open "Training Module.html"</span>
+
+<span class="comment"># 4. Review and share</span>
+<span class="comment"># Files ready to send:</span>
+<span class="command">zip -r "Training.zip" "Training Module.html" "Training Module_videos/"</span></code></pre>
+      </section>
+
+      <!-- What You Get -->
+      <section>
+        <h2><span class="emoji">✨</span> What You Get</h2>
+
+        <div class="success">
+          <strong>Professional Storyboard</strong>
+          <ul>
+            <li>3-column cinema-grade layout</li>
+            <li>Embedded video players with controls</li>
+            <li>Detailed production instructions</li>
+            <li>Ready for production teams</li>
+          </ul>
+        </div>
+
+        <div class="success">
+          <strong>AI-Generated Assets</strong>
+          <ul>
+            <li>Midjourney images (Indian professionals)</li>
+            <li>Runway ML B-roll videos</li>
+            <li>Professional quality (1920×1080)</li>
+            <li>Automatic AI prompts included</li>
+          </ul>
+        </div>
+
+        <div class="success">
+          <strong>Complete Documentation</strong>
+          <ul>
+            <li>Camera setup instructions</li>
+            <li>Lighting specifications</li>
+            <li>Performance guidelines</li>
+            <li>Original AI prompts for reference</li>
+          </ul>
+        </div>
+
+        <div class="success">
+          <strong>File Organization</strong>
+          <ul>
+            <li>HTML storyboard (easy to share)</li>
+            <li>Video folder (organized by slide)</li>
+            <li>Metrics report (for budgeting)</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Help -->
+      <section>
+        <h2><span class="emoji">❓</span> Need Help?</h2>
+        <p>View the help message anytime:</p>
+        <pre><code><span class="command">node storyboard-generator.js</span></code></pre>
+
+        <p>Shows:</p>
+        <pre><code>Usage: node storyboard-generator.js &lt;script-file&gt; [options]
+
+Options:
+  --no-images     Skip image generation (use placeholder SVGs)
+  --video         Generate B-roll videos (requires Runway ML API key)
+  --output NAME   Output filename (default: storyboard)
+
+Example:
+  node storyboard-generator.js script.txt
+  node storyboard-generator.js script.txt --video
+  node storyboard-generator.js script.txt --video --output "Module"</code></pre>
+      </section>
+
+      <!-- Summary -->
+      <section>
+        <h2><span class="emoji">✅</span> Summary</h2>
+        <div class="success">
+          <p><strong>It's simple:</strong></p>
+          <ol>
+            <li>Setup once: Add API keys to <code>.env</code></li>
+            <li>Run: <code>node storyboard-generator.js script.txt --video --output "Name"</code></li>
+            <li>Wait: 5-7 minutes for generation</li>
+            <li>Open: <code>open "Name.html"</code> in browser</li>
+            <li>Share: Zip the HTML + videos folder</li>
+          </ol>
+          <p><strong>That's it! Fully automated, production-ready output.</strong></p>
+        </div>
+      </section>
+
+      <footer>
+        <p><strong>Storyboard Skill v2.0</strong> • Professional AI Storyboard Generator</p>
+        <p>Version 2.0.0 • Status: Production Ready ✅</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">Generated: 2026-05-29</p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
