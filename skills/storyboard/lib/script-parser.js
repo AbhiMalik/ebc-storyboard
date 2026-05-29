@@ -55,10 +55,6 @@ class ScriptParser {
       (kw) => normalized.includes(kw)
     ).length;
 
-    if (speakerLabel && (speakerLabel.includes('Chairperson') || speakerLabel.includes('Member'))) {
-      return 'animator-chart';
-    }
-
     if (instructorScore > animaticScore && instructorScore > imageScore) {
       return 'instructor-shot';
     }
